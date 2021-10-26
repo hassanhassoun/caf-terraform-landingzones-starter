@@ -3,27 +3,23 @@
 #
 # passthrough means the default CAF naming convention is not applied and you are responsible
 # of the unicity of the names you are giving. the CAF provider will clear out
-passthrough = {{ config.caf_terraform.naming_convention.passthrough | string | lower }}
+passthrough = false
 # adds random chars at the end of the names produced by the provider
 # Do not change the following values once the launchpad deployed.
 
-{% if config.caf_terraform.naming_convention.prefix is defined %}
-prefix = "{{ config.caf_terraform.naming_convention.prefix }}-{{ config.caf_terraform.launchpad.caf_environment }}"
-{% endif %}
+prefix = "hhh-sandpit"
 
 # Enable tag inheritance (can be changed)
-inherit_tags = {{ config.caf_terraform.naming_convention.inherit_tags | string | lower }}
+inherit_tags = false
 # When passthrough is set to false, define the number of random characters to add to the names
-random_length = {{ config.caf_terraform.naming_convention.random_length }}
+random_length = 5
 
 # Default region. When not set to a resource it will use that value
-default_region = "{{ config.caf_terraform.launchpad.default_region_key }}"
+default_region = "region1"
 
 # You can reference the regions by using region1, region2 or set your own keys
 regions = {
-{% for key in config.caf_terraform.launchpad.regions.keys() %}
-  {{ key }} = "{{ config.caf_terraform.launchpad.regions[key].name }}"
-{% endfor %}
+  region1 = "Canada Central"
 }
 
 # Rover will adjust some tags to enable the discovery of the launchpad.

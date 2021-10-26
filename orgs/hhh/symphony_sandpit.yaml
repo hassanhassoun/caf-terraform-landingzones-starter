@@ -1,0 +1,11 @@
+environment: sandpit
+ # All paths are relative
+levels:
+- level: level0
+  type: platform
+  stacks:
+  - stack: launchpad
+    landingZonePath: landingzones/caf_launchpad
+    configurationPath: "configuration/hhh/sandpit/standalone/platform/level0/launchpad"
+    tfState: caf_launchpad.tfstate
+  launchpad: true

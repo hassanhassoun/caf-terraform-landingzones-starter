@@ -1,0 +1,3 @@
+rover ignite   --playbook /tf/caf/templates/platform/ansible.yaml   -e base_templates_folder=/tf/caf/templates/platform   -e config_folder=/tf/caf/orgs/hhh/standalone/platform   -e config_folder_asvm=/tf/caf/orgs/hhh/standalone/asvm   -e scenario=sandpit-configuration   -e boostrap_launchpad=false   -e deploy_subscriptions=false
+
+rover deploy plan -sc orgs/hhh/symphony_sandpit.yaml -b /tf/caf -env demo -ct launchpad -level0

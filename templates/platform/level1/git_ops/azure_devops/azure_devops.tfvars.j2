@@ -67,19 +67,19 @@ azure_devops = {
 
   pipelines = {
     caf_foundations_plan = {
-      name                = "caf_foundations_plan"
-      folder              = "\\configuration\\level1"
-      yaml                = "configuration/sandpit/pipelines/pipeline.yaml"
-      repo_type           = "TfsGit"
-      git_repo_name       = "caf-configuration"
-      branch_name         = "starter"
+      name          = "caf_foundations_plan"
+      folder        = "\\configuration\\level1"
+      yaml          = "configuration/sandpit/pipelines/pipeline.yaml"
+      repo_type     = "TfsGit"
+      git_repo_name = "caf-configuration"
+      branch_name = "starter"
       variable_group_keys = ["global", "level1", "level1_kv"]
       variables = {
-        landingZoneName           = "caf_solution",
-        buildName                 = "foundations",
-        level                     = "level1",
-        tfAction                  = "plan",
-        configurationSubdirectory = "",
+          landingZoneName = "caf_solution",
+          buildName = "foundations",
+          level = "level1",
+          tfAction = "plan",
+          configurationSubdirectory = "",
       }
     }
   }

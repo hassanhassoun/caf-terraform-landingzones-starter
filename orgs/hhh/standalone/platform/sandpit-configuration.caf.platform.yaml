@@ -45,6 +45,9 @@ platform_core_setup:
       v0.3.3:
         caf_landingzone_branch: eslz.0.3.3
 
+platform_devops:
+  enable: true
+
 platform_management:
   enable: true
   log_analytics_workspace: create_new

@@ -10,7 +10,11 @@ levels:
 - level: level1
   type: platform
   stacks:
-  - stack: mgmt
-    landingZonePath: landingzones/caf_solution
-    configurationPath: "configuration/hhh/sandpit/standalone/platform/level1/management"
-    tfState: caf_management.tfstate
+  #- stack: mgmt
+  #  landingZonePath: landingzones/caf_solution
+  #  configurationPath: "configuration/hhh/sandpit/standalone/platform/level1/management"
+  #  tfState: caf_management.tfstate
+  - stack: devops
+    landingZonePath: landingzones/caf_solution/add-ons/azure_devops
+    configurationPath: "configuration/hhh/sandpit/standalone/platform/level1/git_ops/azure_devops"
+    tfState: caf_devops.tfstate

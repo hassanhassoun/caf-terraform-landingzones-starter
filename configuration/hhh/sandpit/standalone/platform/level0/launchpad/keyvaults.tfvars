@@ -1,14 +1,14 @@
 
 keyvaults = {
   level0 = {
-    name               = "caflzlevel0"
+    name               = "l0"
     resource_group_key = "level0"
     sku_name           = "standard"
     tags = {
       tfstate         = "level0"
-      environment     = "sandpit"
+      environment     = "spit"
       caf_tfstate     = "level0"
-      caf_environment = "sandpit"
+      caf_environment = "spit"
     }
 
     creation_policies = {
@@ -22,14 +22,14 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "caflzlevel1"
+    name               = "l1"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {
       tfstate         = "level1"
-      environment     = "sandpit"
+      environment     = "spit"
       caf_tfstate     = "level1"
-      caf_environment = "sandpit"
+      caf_environment = "spit"
     }
 
     creation_policies = {
@@ -43,14 +43,14 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "caflzlevel2"
+    name               = "l2"
     resource_group_key = "level2"
     sku_name           = "standard"
     tags = {
       tfstate         = "level2"
-      environment     = "sandpit"
+      environment     = "spit"
       caf_tfstate     = "level2"
-      caf_environment = "sandpit"
+      caf_environment = "spit"
     }
 
     creation_policies = {
@@ -64,14 +64,14 @@ keyvaults = {
   }
 
   level3 = {
-    name               = "caflzlevel3"
+    name               = "l3"
     resource_group_key = "level3"
     sku_name           = "standard"
     tags = {
       tfstate         = "level3"
-      environment     = "sandpit"
+      environment     = "spit"
       caf_tfstate     = "level3"
-      caf_environment = "sandpit"
+      caf_environment = "spit"
     }
 
     creation_policies = {
@@ -85,14 +85,14 @@ keyvaults = {
   }
 
   level4 = {
-    name               = "caflzlevel4"
+    name               = "l4"
     resource_group_key = "level4"
     sku_name           = "standard"
     tags = {
       tfstate         = "level4"
-      environment     = "sandpit"
+      environment     = "spit"
       caf_tfstate     = "level4"
-      caf_environment = "sandpit"
+      caf_environment = "spit"
     }
 
     creation_policies = {

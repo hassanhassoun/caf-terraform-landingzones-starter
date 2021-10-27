@@ -19,7 +19,7 @@ rover \
   -tfstate_subscription_id e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate eslz.tfstate \
   -log-severity ERROR \
-  -env sandpit \
+  -env spit \
   -level level1 \
   -p ${TF_DATA_DIR}/eslz.tfstate.tfplan \
   -a plan

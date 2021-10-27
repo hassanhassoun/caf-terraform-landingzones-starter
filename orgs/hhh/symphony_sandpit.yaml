@@ -1,5 +1,3 @@
-environment: sandpit
- # All paths are relative
 levels:
 - level: level0
   type: platform

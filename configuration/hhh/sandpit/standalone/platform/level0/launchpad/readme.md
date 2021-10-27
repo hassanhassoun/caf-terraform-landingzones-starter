@@ -1,4 +1,4 @@
-# Launchpad - scenario sandpit-configuration / sandpit
+# Launchpad - scenario sandpit-configuration / spit
 
 The sandpit-configuration scenario is designed to demonstrate a basic functional foundations to store Terraform state on Azure storage and use it centrally.
 The focus of this scenario is to be able to deploy a basic launchpad from a remote machine and use the portal to review the settings in a non-constrained environment.
@@ -35,7 +35,7 @@ rover \
   -tfstate caf_launchpad.tfstate \
   -log-severity ERROR \
   -launchpad \
-  -env sandpit \
+  -env spit \
   -level level0 \
   -p ${TF_DATA_DIR}/caf_launchpad.tfstate.tfplan \
   -a plan

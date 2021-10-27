@@ -7,7 +7,7 @@ passthrough = false
 # adds random chars at the end of the names produced by the provider
 # Do not change the following values once the launchpad deployed.
 
-prefix = "hhh-sandpit"
+prefix = "hhh-spit"
 
 # Enable tag inheritance (can be changed)
 inherit_tags = false

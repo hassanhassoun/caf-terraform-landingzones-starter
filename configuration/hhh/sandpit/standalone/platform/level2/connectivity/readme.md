@@ -22,7 +22,7 @@ rover \
   -tfstate_subscription_id e59609a0-4cb2-4567-923e-ea8abc260726 \
   -target_subscription e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate connectivity_virtual_wan.tfstate \
-  -env sandpit \
+  -env spit \
   -level level2 \
   -p ${TF_DATA_DIR}/connectivity_virtual_wan.tfstate.tfplan \
   -a plan
@@ -48,7 +48,7 @@ rover \
   -target_subscription e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate connectivity_virtual_hub_prod.tfstate \
   -log-severity ERROR \
-  -env sandpit \
+  -env spit \
   -level level2 \
   -p ${TF_DATA_DIR}/connectivity_virtual_hub_prod.tfstate.tfplan \
   -a plan
@@ -72,7 +72,7 @@ rover \
   -target_subscription e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate connectivity_virtual_hub_non_prod.tfstate \
   -log-severity ERROR \
-  -env sandpit \
+  -env spit \
   -level level2 \
   -p ${TF_DATA_DIR}/connectivity_virtual_hub_non_prod.tfstate.tfplan \
   -a plan

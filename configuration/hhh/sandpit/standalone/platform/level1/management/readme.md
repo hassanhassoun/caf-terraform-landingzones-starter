@@ -16,7 +16,7 @@ rover \
   -target_subscription e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate management.tfstate \
   -log-severity ERROR \
-  -env sandpit \
+  -env spit \
   -level level1 \
   -p ${TF_DATA_DIR}/management.tfstate.tfplan \
   -a plan

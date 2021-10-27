@@ -8,7 +8,7 @@ caf_terraform:
     subscription_id: e59609a0-4cb2-4567-923e-ea8abc260726
     subscription_name: Hassan Hassoun Sandpit
     tenant_id: 88e812d1-9139-4caa-b875-2dffdda810d0
-    caf_environment: sandpit
+    caf_environment: spit
     account_replication_type: GRS
     blob_versioning_enabled: true
     container_delete_retention_policy: 7

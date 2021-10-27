@@ -1,23 +1,23 @@
 storage_accounts:
   level0:
-    name: caflzlevel0
+    name: l0
   level1:
-    name: caflzlevel1
+    name: l1
   level2:
-    name: caflzlevel2
+    name: l2
   level3:
-    name: caflzlevel3
+    name: l3
   level4:
-    name: caflzlevel4
+    name: l4
 
 keyvaults:
   level0:
-    name: caflzlevel0
+    name: l0
   level1:
-    name: caflzlevel1
+    name: l1
   level2:
-    name: caflzlevel2
+    name: l2
   level3:
-    name: caflzlevel3
+    name: l3
   level4:
-    name: caflzlevel4
+    name: l4

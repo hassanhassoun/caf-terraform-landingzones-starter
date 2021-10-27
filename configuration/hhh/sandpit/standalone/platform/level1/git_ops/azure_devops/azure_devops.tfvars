@@ -51,15 +51,15 @@ azure_devops = {
     }
 
     level1_kv = {
-      name         = "release-level1-msi"
+      name         = "release-level1-sp"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
-        keyvault_key        = "level1"
+        keyvault_key        = "level0"
         serviceendpoint_key = "hhh"
       }
       variables = {
-        name = "msi-resource-id"
+        name = "tenant-id"
       }
     }
 

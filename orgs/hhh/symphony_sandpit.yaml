@@ -7,3 +7,10 @@ levels:
     configurationPath: "configuration/hhh/sandpit/standalone/platform/level0/launchpad"
     tfState: caf_launchpad.tfstate
   launchpad: true
+- level: level1
+  type: platform
+  stacks:
+  - stack: mgmt
+    landingZonePath: landingzones/caf_solution
+    configurationPath: "configuration/hhh/sandpit/standalone/platform/level1/management"
+    tfState: caf_management.tfstate

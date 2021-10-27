@@ -2,7 +2,7 @@
 # Define the settings for log analytics workspace and solution map
 #
 diagnostic_log_analytics = {
-  central_logs_sea = {
+  central_logs_cc = {
     region             = "region1"
     name               = "laprodlog"
     resource_group_key = "mgmt"

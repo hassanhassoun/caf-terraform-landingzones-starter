@@ -1,3 +1,13 @@
+keyvault_access_policies_azuread_apps = {
+{% for num in range(0, config.caf_terraform.launchpad.number_of_levels) %}
+  level{{ num }} = {
+      caf_launchpad_level0 = {
+        azuread_app_key    = "caf_launchpad_level0"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+  }
+{% endfor %}
+}
 
 keyvaults = {
   level0 = {

@@ -12,8 +12,14 @@ role_mapping = {
           logged_in = {
             keys = ["user"]
           }
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
+          }
         }
         "Management Group Contributor" = {
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
+          }
           logged_in = {
             keys = ["user"]
           }
@@ -21,6 +27,9 @@ role_mapping = {
         "Owner" = {
           logged_in = {
             keys = ["user"]
+          }
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
           }
         }
       }
@@ -30,6 +39,9 @@ role_mapping = {
     storage_accounts = {
       level0 = {
         "Storage Blob Data Contributor" = {
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
+          }
           logged_in = {
             keys = ["user"]
           }
@@ -38,6 +50,9 @@ role_mapping = {
 
       level1 = {
         "Storage Blob Data Contributor" = {
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
+          }
           logged_in = {
             keys = ["user"]
           }
@@ -46,6 +61,9 @@ role_mapping = {
 
       level2 = {
         "Storage Blob Data Contributor" = {
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
+          }
           logged_in = {
             keys = ["user"]
           }
@@ -54,6 +72,9 @@ role_mapping = {
 
       level3 = {
         "Storage Blob Data Contributor" = {
+          azuread_apps = {
+            keys = ["caf_launchpad_level0"]
+          }
           logged_in = {
             keys = ["user"]
           }

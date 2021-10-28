@@ -29,14 +29,14 @@ azure_devops = {
       allow_access = true
       variables = {
         HOME_FOLDER_USER    = "vsts_azpcontainer"
-        ROVER_IMAGE         = "aztfmod/rover:0.14.11-2104.2711"
+        ROVER_IMAGE         = "aztfmod/rover-preview:1.0.9-2110.200507"
         ROVER_RUNNER        = "true"
         TF_CLI_ARGS         = "'-no-color'"
         TF_CLI_ARGS_init    = ""
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
-        ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "2104.3"
+        ENVIRONMENT         = "spit"
+        LANDINGZONE_BRANCH  = "master"
       }
     }
 
@@ -49,9 +49,9 @@ azure_devops = {
         AGENT_POOL            = "caf-sandpit-level1"
       }
     }
-
-    level1_kv = {
-      name         = "release-level1-sp"
+{% for secret in ['client-id', 'client-secret', 'tenant-id'] %}
+    level1_{{ secret | replace("-", "_") }} = {
+      name         = "release-level1-{{ secret }}"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
@@ -59,24 +59,38 @@ azure_devops = {
         serviceendpoint_key = "hhh"
       }
       variables = {
-        name = "tenant-id"
+        name = "aadapp-caf-launchpad-level0-{{ secret }}"
+      }
+    }
+{% endfor %}
+
+    level1_sp_subscription = {
+      name         = "release-level1-sp-subscription"
+      allow_access = true
+      keyvault = {
+        lz_key              = "launchpad"
+        keyvault_key        = "level0"
+        serviceendpoint_key = "hhh"
+      }
+      variables = {
+        name = "subscription-id"
       }
     }
 
   }
 
   pipelines = {
-    caf_foundations_plan = {
-      name          = "caf_foundations_plan"
+    caf_management_plan = {
+      name          = "caf_management_plan"
       folder        = "\\configuration\\level1"
       yaml          = "configuration/sandpit/pipelines/pipeline.yaml"
       repo_type     = "TfsGit"
       git_repo_name = "caf-configuration"
       branch_name = "starter"
-      variable_group_keys = ["global", "level1", "level1_kv"]
+      variable_group_keys = ["global", "level1", "level1_client_id", "level1_client_secret", "level1_tenant_id", "level1_sp_subscription"]
       variables = {
           landingZoneName = "caf_solution",
-          buildName = "foundations",
+          buildName = "management",
           level = "level1",
           tfAction = "plan",
           configurationSubdirectory = "",

@@ -14,7 +14,7 @@ caf_terraform:
     container_delete_retention_policy: 7
     delete_retention_policy: 7
     default_region_key: region1
-    number_of_levels: 5
+    number_of_levels: 4
     regions:
       region1:
         name: Canada Central

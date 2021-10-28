@@ -1,3 +1,29 @@
+keyvault_access_policies_azuread_apps = {
+  level0 = {
+    caf_launchpad_level0 = {
+      azuread_app_key    = "caf_launchpad_level0"
+      secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+    }
+  }
+  level1 = {
+    caf_launchpad_level0 = {
+      azuread_app_key    = "caf_launchpad_level0"
+      secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+    }
+  }
+  level2 = {
+    caf_launchpad_level0 = {
+      azuread_app_key    = "caf_launchpad_level0"
+      secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+    }
+  }
+  level3 = {
+    caf_launchpad_level0 = {
+      azuread_app_key    = "caf_launchpad_level0"
+      secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+    }
+  }
+}
 
 keyvaults = {
   level0 = {

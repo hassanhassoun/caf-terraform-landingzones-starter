@@ -116,6 +116,25 @@ azure_devops = {
         level                     = "level1",
         tfAction                  = "plan",
         configurationSubdirectory = "",
+
+      }
+    }
+    caf_management_apply = {
+      name                = "caf_management_apply"
+      folder              = "\\configuration\\level1"
+      yaml                = "configuration/sandpit/pipelines/pipeline.yaml"
+      repo_type           = "TfsGit"
+      git_repo_name       = "caf-configuration"
+      branch_name         = "starter"
+      variable_group_keys = ["global", "level1", "level1_client_id", "level1_client_secret", "level1_tenant_id", "level1_sp_subscription"]
+      variables = {
+        landingZoneName           = "caf_solution",
+        buildName                 = "management",
+        level                     = "level1",
+        tfAction                  = "apply",
+        configurationSubdirectory = "",
+        planPipelineID            = "59",
+
       }
     }
   }

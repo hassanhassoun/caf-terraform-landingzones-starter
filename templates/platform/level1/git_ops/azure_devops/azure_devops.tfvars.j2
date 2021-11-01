@@ -80,8 +80,9 @@ azure_devops = {
   }
 
   pipelines = {
-    caf_management_plan = {
-      name          = "caf_management_plan"
+{% for action in ["plan", "apply"] %}
+    caf_management_{{ action }} = {
+      name          = "caf_management_{{ action }}"
       folder        = "\\configuration\\level1"
       yaml          = "configuration/sandpit/pipelines/pipeline.yaml"
       repo_type     = "TfsGit"
@@ -92,9 +93,13 @@ azure_devops = {
           landingZoneName = "caf_solution",
           buildName = "management",
           level = "level1",
-          tfAction = "plan",
+          tfAction = "{{ action }}",
           configurationSubdirectory = "",
+{% if action == "apply" %}
+          planPipelineID = "59",
+{% endif %} 
       }
     }
+{% endfor %}
   }
 }

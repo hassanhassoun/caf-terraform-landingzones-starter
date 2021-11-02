@@ -2,7 +2,7 @@ landingzone = {
   backend_type        = "azurerm"
   global_settings_key = "launchpad"
   level               = "level1"
-  key                 = "azdo-{{ devops.project }}"
+  key                 = "azdo-mxx"
   tfstates = {
     launchpad = {
       level   = "lower"
@@ -36,25 +36,44 @@ keyvaults = {
 }
 
 keyvault_access_policies_azuread_apps = {
-{% for num in range(0, config.caf_terraform.launchpad.number_of_levels) %}
-  level{{ num }} = {
-    {{ devops.project }}_devops = {
+  level0 = {
+    mxx_devops = {
       keyvault_lz_key    = "launchpad"
-      azuread_app_key    = "{{ devops.project }}_devops"
+      azuread_app_key    = "mxx_devops"
       secret_permissions = ["Get", "List"]
     }
   }
-{% endfor %}
+  level1 = {
+    mxx_devops = {
+      keyvault_lz_key    = "launchpad"
+      azuread_app_key    = "mxx_devops"
+      secret_permissions = ["Get", "List"]
+    }
+  }
+  level2 = {
+    mxx_devops = {
+      keyvault_lz_key    = "launchpad"
+      azuread_app_key    = "mxx_devops"
+      secret_permissions = ["Get", "List"]
+    }
+  }
+  level3 = {
+    mxx_devops = {
+      keyvault_lz_key    = "launchpad"
+      azuread_app_key    = "mxx_devops"
+      secret_permissions = ["Get", "List"]
+    }
+  }
 }
 
 
 azuread_apps = {
 
-  {{ devops.project }}_devops = {
+  mxx_devops = {
     useprefix               = true
-    application_name        = "caf-level4-{{ devops.project }}"
+    application_name        = "caf-level4-mxx"
     password_expire_in_days = 60
-    tenant_name             = "{{ config.caf_terraform.launchpad.tenant_id }}.onmicrosoft.com"
+    tenant_name             = "88e812d1-9139-4caa-b875-2dffdda810d0.onmicrosoft.com"
     keyvaults = {
       devops = {
         secret_prefix = "aadapp-caf-launchpad-level0"
@@ -87,7 +106,7 @@ role_mapping = {
       logged_in_subscription = {
         "caf-azdo-to-azure-subscription" = {
           azuread_apps = {
-            keys = ["{{ devops.project }}_devops"]
+            keys = ["mxx_devops"]
           }
         }
       }

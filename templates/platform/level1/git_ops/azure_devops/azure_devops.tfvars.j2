@@ -1,31 +1,31 @@
 
 azure_devops = {
 
-  url     = "https://dev.azure.com/hassanhassoun0672/"
-  project = "hhh"
+  url     = "https://dev.azure.com/{{ devops.org }}/"
+  project = "{{ devops.project }}"
 
   # PAT Token should be updated manually to the keyvault after running launchpad
   pats = {
     admin = {
       secret_name  = "azdo-pat-admin"
-      lz_key       = "launchpad"
+      lz_key       = "{{ tfstates.launchpad.lz_key_name }}"
       keyvault_key = "level0"
     }
   }
 
   service_endpoints = {
-    hhh = {
-      endpoint_name       = "Hassan Hassoun Sandpit"
-      subscription_name   = "Hassan Hassoun Sandpit"
-      subscription_id     = "e59609a0-4cb2-4567-923e-ea8abc260726"
-      aad_app_key         = "hhh_devops"
+    {{ devops.project }} = {
+      endpoint_name       = "{{ config.caf_terraform.launchpad.subscription_name }}"
+      subscription_name   = "{{ config.caf_terraform.launchpad.subscription_name }}"
+      subscription_id     = "{{ config.caf_terraform.launchpad.subscription_id }}"
+      aad_app_key         = "{{ devops.project }}_devops"
       secret_keyvault_key = "devops"
     }
   }
 
   variable_groups = {
     global = {
-      name         = "release-global" # changing that name requires to change it in the devops agents yaml variables group
+      name         = "release-global-{{ config.caf_terraform.launchpad.caf_environment }}" # changing that name requires to change it in the devops agents yaml variables group
       allow_access = true
       variables = {
         HOME_FOLDER_USER    = "vsts_azpcontainer"
@@ -35,28 +35,30 @@ azure_devops = {
         TF_CLI_ARGS_init    = ""
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
-        ENVIRONMENT         = "spit"
+        ENVIRONMENT         = "{{ config.caf_terraform.launchpad.caf_environment }}"
         LANDINGZONE_BRANCH  = "master"
       }
     }
 
-    level1 = {
-      name         = "release-level1"
+{% for num in range(1, config.caf_terraform.launchpad.number_of_levels) %}
+    level{{ num }} = {
+      name         = "release-level{{ num }}-{{ config.caf_terraform.launchpad.caf_environment }}"
       allow_access = true
       variables = {
-        TF_VAR_pipeline_level = "level1"
+        TF_VAR_pipeline_level = "level{{ num }}"
         ARM_USE_MSI           = "true"
-        AGENT_POOL            = "caf-sandpit-level1"
+        AGENT_POOL            = "caf-{{ config.caf_terraform.launchpad.caf_environment }}-level{{ num }}"
       }
     }
+{% endfor %}
 {% for secret in ['client-id', 'client-secret', 'tenant-id'] %}
     level1_{{ secret | replace("-", "_") }} = {
-      name         = "release-level1-{{ secret }}"
+      name         = "release-level1-{{ config.caf_terraform.launchpad.caf_environment }}-{{ secret }}"
       allow_access = true
       keyvault = {
-        lz_key              = "launchpad"
+        lz_key              = "{{ tfstates.launchpad.lz_key_name }}"
         keyvault_key        = "level0"
-        serviceendpoint_key = "hhh"
+        serviceendpoint_key = "{{ devops.project }}"
       }
       variables = {
         name = "aadapp-caf-launchpad-level0-{{ secret }}"
@@ -65,12 +67,12 @@ azure_devops = {
 {% endfor %}
 
     level1_sp_subscription = {
-      name         = "release-level1-sp-subscription"
+      name         = "release-level1-sp-subscription-{{ config.caf_terraform.launchpad.caf_environment }}"
       allow_access = true
       keyvault = {
-        lz_key              = "launchpad"
+        lz_key              = "{{ tfstates.launchpad.lz_key_name }}"
         keyvault_key        = "level0"
-        serviceendpoint_key = "hhh"
+        serviceendpoint_key = "{{ devops.project }}"
       }
       variables = {
         name = "subscription-id"
@@ -84,10 +86,10 @@ azure_devops = {
     caf_management_{{ action }} = {
       name          = "caf_management_{{ action }}"
       folder        = "\\configuration\\level1"
-      yaml          = "configuration/sandpit/pipelines/pipeline.yaml"
+      yaml          = ".pipelines/pipeline.yaml"
       repo_type     = "TfsGit"
-      git_repo_name = "caf-configuration"
-      branch_name = "starter"
+      git_repo_name = "{{ devops.pipeline_repo.name }}"
+      branch_name = "{{ devops.pipeline_repo.branch }}"
       variable_group_keys = ["global", "level1", "level1_client_id", "level1_client_secret", "level1_tenant_id", "level1_sp_subscription"]
       variables = {
           landingZoneName = "caf_solution",
@@ -95,9 +97,6 @@ azure_devops = {
           level = "level1",
           tfAction = "{{ action }}",
           configurationSubdirectory = "",
-{% if action == "apply" %}
-          planPipelineID = "59",
-{% endif %} 
       }
     }
 {% endfor %}

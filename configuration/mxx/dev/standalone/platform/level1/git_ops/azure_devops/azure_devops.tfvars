@@ -121,7 +121,7 @@ azure_devops = {
 
   pipelines = {
     caf_management_plan = {
-      name                = "caf_management_plan"
+      name                = "mxx_dev_management_plan"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -139,7 +139,7 @@ azure_devops = {
   }
   apply_pipelines = {
     caf_management_apply = {
-      name                = "caf_management_apply"
+      name                = "mxx_dev_management_apply"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"

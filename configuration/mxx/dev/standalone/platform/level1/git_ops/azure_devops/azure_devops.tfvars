@@ -136,6 +136,8 @@ azure_devops = {
         configurationSubdirectory = "",
       }
     }
+  }
+  apply_pipelines = {
     caf_management_apply = {
       name                = "caf_management_apply"
       folder              = "\\configuration\\level1"
@@ -150,6 +152,7 @@ azure_devops = {
         level                     = "level1",
         tfAction                  = "apply",
         configurationSubdirectory = "",
+        planID                    = { plan_key = "caf_management_plan" },
       }
     }
   }

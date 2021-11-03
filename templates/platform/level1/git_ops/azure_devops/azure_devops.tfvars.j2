@@ -82,9 +82,8 @@ azure_devops = {
   }
 
   pipelines = {
-{% for action in ["plan", "apply"] %}
-    caf_management_{{ action }} = {
-      name          = "caf_management_{{ action }}"
+    caf_management_plan = {
+      name          = "caf_management_plan"
       folder        = "\\configuration\\level1"
       yaml          = ".pipelines/pipeline.yaml"
       repo_type     = "TfsGit"
@@ -95,10 +94,28 @@ azure_devops = {
           landingZoneName = "caf_solution",
           buildName = "management",
           level = "level1",
-          tfAction = "{{ action }}",
+          tfAction = "plan",
           configurationSubdirectory = "",
       }
     }
-{% endfor %}
+  }
+  apply_pipelines = {
+    caf_management_apply = {
+      name          = "caf_management_apply"
+      folder        = "\\configuration\\level1"
+      yaml          = ".pipelines/pipeline.yaml"
+      repo_type     = "TfsGit"
+      git_repo_name = "{{ devops.pipeline_repo.name }}"
+      branch_name = "{{ devops.pipeline_repo.branch }}"
+      variable_group_keys = ["global", "level1", "level1_client_id", "level1_client_secret", "level1_tenant_id", "level1_sp_subscription"]
+      variables = {
+          landingZoneName = "caf_solution",
+          buildName = "management",
+          level = "level1",
+          tfAction = "apply",
+          configurationSubdirectory = "",
+          planID = { plan_key = "caf_management_plan" },
+      }
+    }
   }
 }

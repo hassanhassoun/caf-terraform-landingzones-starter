@@ -1,0 +1,5 @@
+project: mxx
+org: hassanhassoun0672
+pipeline_repo: 
+  name: pipelines
+  branch: main

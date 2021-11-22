@@ -1,9 +1,4 @@
 azuread_service_principals = {
-  aadapp = {
-    azuread_application = {
-      key = "aadapp"
-    }
-  }
   # Manage the deployment of the level0
   level0 = {
     azuread_application = {

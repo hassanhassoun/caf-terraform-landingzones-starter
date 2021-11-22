@@ -9,7 +9,6 @@ azuread_groups_membership = {
 {% endif %}
 {% if config.platform_identity.azuread_identity_mode != 'logged_in_user' %}
     members = {
-      group_names = ["caf_platform_maintainers"]
       user_principal_names = [
         "{{ config.caf_terraform.billing_subscription_role_delegations.azuread_user_ea_account_owner }}",
 {% if config.platform_identity.azuread_identity_mode != 'logged_in_user'%}
@@ -23,7 +22,6 @@ azuread_groups_membership = {
   }
   caf_platform_contributors = {
     members = {
-      service_principal_keys = ["aadapp"]
       user_principal_names = [
 {% if config.platform_identity.azuread_identity_mode != 'logged_in_user' and config.platform_identity.caf_platform_contributors is defined %}
 {% for user in config.platform_identity.caf_platform_contributors %}

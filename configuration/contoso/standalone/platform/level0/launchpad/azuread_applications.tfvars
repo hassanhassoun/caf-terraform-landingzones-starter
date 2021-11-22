@@ -12,7 +12,6 @@ azuread_apps = {
     # Set the policy during the creation process of the launchpad
   }
 }
-
 azuread_applications = {
   level0 = {
     application_name = "sp-caf-level0"

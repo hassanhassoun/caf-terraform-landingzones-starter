@@ -2,15 +2,18 @@ azuread_groups = {
   caf_platform_maintainers = {
     name                   = "caf-platform-maintainers"
     description            = "High privileged group to run all CAF deployments from vscode. Can be used to bootstrap or troubleshoot deployments."
-    prevent_duplicate_name = true
     members = {
       service_principal_keys = ["aadapp"]
     }
+    prevent_duplicate_name = true
   }
 
   caf_platform_contributors = {
     name                   = "caf-platform-contributors"
     description            = "Can only execute terraform plans for level1 and level2. They can test platform improvements and propose PR."
+    members = {
+      service_principal_keys = ["aadapp"]
+    }
     prevent_duplicate_name = true
   }
 

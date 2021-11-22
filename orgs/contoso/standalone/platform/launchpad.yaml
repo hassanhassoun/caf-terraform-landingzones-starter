@@ -5,6 +5,8 @@ resources:
 subscriptions:
   launchpad:
     resource_groups:
+      testrg:
+        name: nameoftestrg
       level0:
         name: caf-level0
         tags:

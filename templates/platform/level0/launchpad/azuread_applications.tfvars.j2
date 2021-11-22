@@ -1,4 +1,10 @@
 azuread_applications = {
+   aadapp = {
+    application_name = "aadapp-caf-launchpad-level0"
+{% if config.caf_terraform.billing_subscription_role_delegations.azuread_user_ea_account_owner_object_id is defined %}
+    owners           = ["{{ config.caf_terraform.billing_subscription_role_delegations.azuread_user_ea_account_owner_object_id }}"]  // EA account
+{% endif %}
+  }
   level0 = {
     application_name = "sp-caf-level0"
 {% if config.caf_terraform.billing_subscription_role_delegations.azuread_user_ea_account_owner_object_id is defined %}

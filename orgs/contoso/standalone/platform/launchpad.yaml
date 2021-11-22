@@ -1,3 +1,7 @@
+resources:
+  subscriptions:
+    launchpad:
+      azuread_applications: true
 subscriptions:
   launchpad:
     resource_groups:

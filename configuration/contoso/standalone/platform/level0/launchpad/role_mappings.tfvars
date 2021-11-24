@@ -25,18 +25,18 @@ role_mapping = {
         }
       }
     }
-  subscriptions = {
-    logged_in_subscription = {
-      "Owner" = {
-        azuread_groups = {
-          keys = ["level0", "caf_platform_maintainers", "subscription_creation_platform"]
+    subscriptions = {
+      logged_in_subscription = {
+        "Owner" = {
+          azuread_groups = {
+            keys = ["level0", "caf_platform_maintainers", "subscription_creation_platform"]
+          }
         }
-      }
-      "Reader" = {
-        azuread_groups = {
-          keys = ["identity"]
+        "Reader" = {
+          azuread_groups = {
+            keys = ["identity"]
+          }
         }
-      }
       }
     }
 

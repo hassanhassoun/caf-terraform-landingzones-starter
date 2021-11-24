@@ -2,7 +2,7 @@
 # Generate the terraform configuration files
 
 To execute this step you need to login with one of the CAF maintainers accounts:
-  - hassan.hassoun@avanade.com
+  - hassan.hassoun_avanade.com#EXT#@hassanhassounsandpit.onmicrosoft.com
 
 ```bash
 rover login -t hassanhassounsandpit

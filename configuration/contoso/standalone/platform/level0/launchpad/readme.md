@@ -11,10 +11,21 @@ This scenario requires the following privileges:
 
 ## Deployment
 
+### Pre-requisite
+
+Elevate your credentials to the tenant root level to have enough privileges to create the management group hierarchy.
+
+```bash
+# Login to the subscription set_subscription_name with an account owner.
+rover login -t hassanhassounsandpit
+az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
+
+```
 
 ### Launchpad
 
 ```bash
+# Login to the subscription set_subscription_name with an account owner.
 rover login -t hassanhassounsandpit -s set_subscription_guid
 
 cd /tf/caf/landingzones

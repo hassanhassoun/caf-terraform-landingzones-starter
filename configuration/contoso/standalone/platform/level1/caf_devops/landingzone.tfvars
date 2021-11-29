@@ -57,13 +57,6 @@ keyvault_access_policies_azuread_apps = {
       secret_permissions = ["Get", "List"]
     }
   }
-  level3 = {
-    mxx_devops = {
-      keyvault_lz_key    = "launchpad"
-      azuread_app_key    = "mxx_devops"
-      secret_permissions = ["Get", "List"]
-    }
-  }
 }
 
 

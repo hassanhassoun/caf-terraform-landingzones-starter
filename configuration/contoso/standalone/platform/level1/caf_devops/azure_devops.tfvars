@@ -1,4 +1,3 @@
-
 azure_devops = {
 
   url     = "https://dev.azure.com/hassanhassoun0672/"
@@ -35,7 +34,7 @@ azure_devops = {
         TF_CLI_ARGS_init    = ""
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
-        ENVIRONMENT         = "dev"
+        ENVIRONMENT         = "sandpit"
         LANDINGZONE_BRANCH  = "master"
       }
     }
@@ -56,15 +55,6 @@ azure_devops = {
         TF_VAR_pipeline_level = "level2"
         ARM_USE_MSI           = "true"
         AGENT_POOL            = "caf-dev-level2"
-      }
-    }
-    level3 = {
-      name         = "release-level3-dev"
-      allow_access = true
-      variables = {
-        TF_VAR_pipeline_level = "level3"
-        ARM_USE_MSI           = "true"
-        AGENT_POOL            = "caf-dev-level3"
       }
     }
     level1_client_id = {

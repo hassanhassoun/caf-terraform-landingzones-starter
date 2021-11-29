@@ -44,6 +44,11 @@ keyvault_access_policies_azuread_apps = {
     }
   }
   level1 = {
+    level0_app = {
+      keyvault_lz_key    = "launchpad"
+      azuread_app_key    = "level0_app"
+      secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+    }
     mxx_devops = {
       keyvault_lz_key    = "launchpad"
       azuread_app_key    = "mxx_devops"
@@ -61,6 +66,20 @@ keyvault_access_policies_azuread_apps = {
 
 
 azuread_apps = {
+  level0_app = {
+    useprefix        = true
+    application_name = "aadapp-caf-launchpad-level0"
+    password_expire_in_days = 120
+    keyvaults = {
+      level0 = {
+        lz_key = "launchpad"
+        secret_prefix = "aadapp-caf-launchpad-level0"
+      }
+    }
+    # Store the ${secret_prefix}-client-id, ${secret_prefix}-client-secret...
+    # Set the policy during the creation process of the launchpad
+  }
+
 
   mxx_devops = {
     useprefix               = true
@@ -92,8 +111,23 @@ custom_role_definitions = {
 
 }
 
-
 role_mapping = {
+  built_in_role_mapping = {
+    subscriptions = {
+      logged_in_subscription = {
+        "User Access Administrator" = {
+           azuread_apps = {
+            keys = ["level0_app"]
+          }
+        }
+        "Owner" = {
+          azuread_apps = {
+            keys = ["level0_app"]
+          }
+        }
+     }
+   }
+  }
   custom_role_mapping = {
     subscriptions = {
       logged_in_subscription = {

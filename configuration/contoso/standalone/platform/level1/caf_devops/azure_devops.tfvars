@@ -28,14 +28,14 @@ azure_devops = {
       allow_access = true
       variables = {
         HOME_FOLDER_USER    = "vsts_azpcontainer"
-        ROVER_IMAGE         = "aztfmod/rover-preview:1.0.9-2110.200507"
+        ROVER_IMAGE         = "aztfmod/rover:1.0.9-2111.0103"
         ROVER_RUNNER        = "true"
         TF_CLI_ARGS         = "'-no-color'"
         TF_CLI_ARGS_init    = ""
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "master"
+        LANDINGZONE_BRANCH  = "eslz.0.3.3"
       }
     }
 

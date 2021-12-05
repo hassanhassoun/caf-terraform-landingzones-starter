@@ -68,12 +68,12 @@ keyvault_access_policies_azuread_apps = {
 azuread_apps = {
   level0_app = {
     useprefix        = true
-    application_name = "aadapp-caf-launchpad-level0"
+    application_name = "aadapp-caf-devops-level1"
     password_expire_in_days = 120
     keyvaults = {
       level0 = {
         lz_key = "launchpad"
-        secret_prefix = "aadapp-caf-launchpad-level0"
+        secret_prefix = "aadapp-caf-devops-level1"
       }
     }
     # Store the ${secret_prefix}-client-id, ${secret_prefix}-client-secret...
@@ -85,10 +85,10 @@ azuread_apps = {
     useprefix               = true
     application_name        = "caf-level4-mxx"
     password_expire_in_days = 60
-    tenant_name             = "88e812d1-9139-4caa-b875-2dffdda810d0.onmicrosoft.com"
+    tenant_name             = "hassanhassounsandpit.onmicrosoft.com"
     keyvaults = {
       devops = {
-        secret_prefix = "aadapp-caf-launchpad-level0"
+        secret_prefix = "caf-level4-mxx"
       }
     }
   }

@@ -36,6 +36,7 @@ azure_devops = {
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
         LANDINGZONE_BRANCH  = "hhh"
+        CONFIGURATION_ROOT  = "train"
       }
     }
 
@@ -66,7 +67,7 @@ azure_devops = {
         serviceendpoint_key = "sandpit"
       }
       variables = {
-        name = "aadapp-caf-launchpad-level0-client-id"
+        name = "caf-launchpad-level0-client-id"
       }
     }
     level1_client_secret = {
@@ -78,7 +79,7 @@ azure_devops = {
         serviceendpoint_key = "sandpit"
       }
       variables = {
-        name = "aadapp-caf-launchpad-level0-client-secret"
+        name = "caf-launchpad-level0-client-secret"
       }
     }
     level1_tenant_id = {
@@ -90,7 +91,7 @@ azure_devops = {
         serviceendpoint_key = "sandpit"
       }
       variables = {
-        name = "aadapp-caf-launchpad-level0-tenant-id"
+        name = "caf-launchpad-level0-tenant-id"
       }
     }
 

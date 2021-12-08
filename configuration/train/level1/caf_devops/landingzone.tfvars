@@ -37,28 +37,23 @@ keyvaults = {
 
 keyvault_access_policies_azuread_apps = {
   level0 = {
-    mxx_devops = {
+    devops = {
       keyvault_lz_key    = "launchpad"
       azuread_app_key    = "devops"
       secret_permissions = ["Get", "List"]
     }
   }
   level1 = {
-    level0_app = {
+    devops = {
       keyvault_lz_key    = "launchpad"
-      azuread_app_key    = "level0_app"
-      secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
-    }
-    mxx_devops = {
-      keyvault_lz_key    = "launchpad"
-      azuread_app_key    = "mxx_devops"
+      azuread_app_key    = "devops"
       secret_permissions = ["Get", "List"]
     }
   }
   level2 = {
-    mxx_devops = {
+    devops = {
       keyvault_lz_key    = "launchpad"
-      azuread_app_key    = "mxx_devops"
+      azuread_app_key    = "devops"
       secret_permissions = ["Get", "List"]
     }
   }

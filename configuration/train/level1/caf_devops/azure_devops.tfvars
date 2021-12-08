@@ -13,11 +13,11 @@ azure_devops = {
   }
 
   service_endpoints = {
-    mxx = {
+    sandpit = {
       endpoint_name       = "Hassan Hassoun Sandpit"
       subscription_name   = "Hassan Hassoun Sandpit"
       subscription_id     = "e59609a0-4cb2-4567-923e-ea8abc260726"
-      aad_app_key         = "mxx_devops"
+      aad_app_key         = "devops"
       secret_keyvault_key = "devops"
     }
   }
@@ -35,7 +35,7 @@ azure_devops = {
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "eslz.0.3.3"
+        LANDINGZONE_BRANCH  = "hhh"
       }
     }
 
@@ -63,7 +63,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "mxx"
+        serviceendpoint_key = "sandpit"
       }
       variables = {
         name = "aadapp-caf-launchpad-level0-client-id"
@@ -75,7 +75,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "mxx"
+        serviceendpoint_key = "sandpit"
       }
       variables = {
         name = "aadapp-caf-launchpad-level0-client-secret"
@@ -87,7 +87,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "mxx"
+        serviceendpoint_key = "sandpit"
       }
       variables = {
         name = "aadapp-caf-launchpad-level0-tenant-id"
@@ -100,7 +100,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "mxx"
+        serviceendpoint_key = "sandpit"
       }
       variables = {
         name = "subscription-id"
@@ -113,7 +113,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "mxx"
+        serviceendpoint_key = "sandpit"
       }
       variables = {
         name = "tfstate-subscription-id"
@@ -124,7 +124,7 @@ azure_devops = {
 
   pipelines = {
     caf_management_plan = {
-      name                = "mxx_dev_management_plan"
+      name                = "train_management_plan"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -142,7 +142,7 @@ azure_devops = {
   }
   apply_pipelines = {
     caf_management_apply = {
-      name                = "mxx_dev_management_apply"
+      name                = "train_management_apply"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"

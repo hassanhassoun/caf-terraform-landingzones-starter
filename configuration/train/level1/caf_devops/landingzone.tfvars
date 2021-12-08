@@ -2,7 +2,7 @@ landingzone = {
   backend_type        = "azurerm"
   global_settings_key = "launchpad"
   level               = "level1"
-  key                 = "azdo-mxx"
+  key                 = "devops"
   tfstates = {
     launchpad = {
       level   = "lower"
@@ -39,7 +39,7 @@ keyvault_access_policies_azuread_apps = {
   level0 = {
     mxx_devops = {
       keyvault_lz_key    = "launchpad"
-      azuread_app_key    = "mxx_devops"
+      azuread_app_key    = "devops"
       secret_permissions = ["Get", "List"]
     }
   }
@@ -66,33 +66,17 @@ keyvault_access_policies_azuread_apps = {
 
 
 azuread_apps = {
-  level0_app = {
-    useprefix        = true
-    application_name = "aadapp-caf-devops-level1"
-    password_expire_in_days = 120
-    keyvaults = {
-      level0 = {
-        lz_key = "launchpad"
-        secret_prefix = "aadapp-caf-devops-level1"
-      }
-    }
-    # Store the ${secret_prefix}-client-id, ${secret_prefix}-client-secret...
-    # Set the policy during the creation process of the launchpad
-  }
-
-
-  mxx_devops = {
+  devops = {
     useprefix               = true
-    application_name        = "caf-level4-mxx"
+    application_name        = "devops"
     password_expire_in_days = 60
     tenant_name             = "hassanhassounsandpit.onmicrosoft.com"
     keyvaults = {
       devops = {
-        secret_prefix = "caf-level4-mxx"
+        secret_prefix = "devops"
       }
     }
   }
-
 }
 
 custom_role_definitions = {
@@ -112,28 +96,12 @@ custom_role_definitions = {
 }
 
 role_mapping = {
-  built_in_role_mapping = {
-    subscriptions = {
-      logged_in_subscription = {
-        "User Access Administrator" = {
-           azuread_apps = {
-            keys = ["level0_app"]
-          }
-        }
-        "Owner" = {
-          azuread_apps = {
-            keys = ["level0_app"]
-          }
-        }
-     }
-   }
-  }
   custom_role_mapping = {
     subscriptions = {
       logged_in_subscription = {
         "caf-azdo-to-azure-subscription" = {
           azuread_apps = {
-            keys = ["mxx_devops"]
+            keys = ["devops"]
           }
         }
       }

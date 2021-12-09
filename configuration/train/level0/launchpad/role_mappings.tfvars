@@ -41,6 +41,16 @@ role_mapping = {
           }
         }
       }
+      level1 = {
+        "Storage Blob Data Contributor" = {
+          logged_in = {
+            keys = ["user"]
+          }
+          azuread_groups = {
+            keys = ["level0"]
+          }
+        }
+      }
     }
   }
 }

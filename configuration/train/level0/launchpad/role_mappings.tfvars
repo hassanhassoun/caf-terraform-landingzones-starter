@@ -30,6 +30,17 @@ role_mapping = {
         }
       }
     }
-
+    storage_accounts = {
+      level0 = {
+        "Storage Blob Data Contributor" = {
+          logged_in = {
+            keys = ["user"]
+          }
+          azuread_groups = {
+            keys = ["level0"]
+          }
+        }
+      }
+    }
   }
 }

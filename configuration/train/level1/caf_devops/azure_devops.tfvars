@@ -164,6 +164,23 @@ azure_devops = {
     }
   }
   apply_pipelines = {
+    caf_devops_apply = {
+      name                = "train_devops_apply"
+      folder              = "\\configuration\\level1"
+      yaml                = ".pipelines/pipeline.yaml"
+      repo_type           = "TfsGit"
+      git_repo_name       = "pipelines"
+      branch_name         = "main"
+      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "management_tfstate_subscription"]
+      variables = {
+        landingZoneName           = "caf_solution/add-ons/azure_devops",
+        buildName                 = "caf_devops",
+        level                     = "level1",
+        tfAction                  = "apply",
+        configurationSubdirectory = "",
+        planID                    = { plan_key = "caf_devops_plan" },
+      }
+    }
     caf_management_apply = {
       name                = "train_management_apply"
       folder              = "\\configuration\\level1"

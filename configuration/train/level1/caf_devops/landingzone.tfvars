@@ -17,8 +17,6 @@ resource_groups = {
   }
 }
 
-# need to add logged in user
-
 keyvaults = {
   devops = {
     name               = "devops"
@@ -26,9 +24,9 @@ keyvaults = {
     sku_name           = "standard"
 
     creation_policies = {
-      logged_in_user = {
-        # if the key is set to "logged_in_user" add the user running terraform in the keyvault policy
-        # More examples in /examples/keyvault
+      level0 = {
+        azuread_group_key  = "level0"
+        lz_key = "launchpad"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
       }
     }

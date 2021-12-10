@@ -74,7 +74,7 @@ azure_devops = {
         serviceendpoint_key = "sandpit"
       }
       variables = {
-        name = "caf-launchpad-level0-client-id"
+        name = "caf-launchpad-client-id"
       }
     }
     level0_client_secret = {
@@ -86,7 +86,7 @@ azure_devops = {
         serviceendpoint_key = "sandpit"
       }
       variables = {
-        name = "caf-launchpad-level0-client-secret"
+        name = "caf-launchpad-client-secret"
       }
     }
     level0_tenant_id = {
@@ -98,7 +98,7 @@ azure_devops = {
         serviceendpoint_key = "sandpit"
       }
       variables = {
-        name = "caf-launchpad-level0-tenant-id"
+        name = "caf-launchpad-tenant-id"
       }
     }
 

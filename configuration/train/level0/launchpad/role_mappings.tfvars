@@ -30,6 +30,17 @@ role_mapping = {
         }
       }
     }
+    resource_groups = {
+      level1 = {
+        "Reader" = {
+          azuread_groups = {
+            keys = [
+              "mgmt",
+            ]
+          }
+        }
+      }
+    }
     storage_accounts = {
       level0 = {
         "Storage Blob Data Contributor" = {

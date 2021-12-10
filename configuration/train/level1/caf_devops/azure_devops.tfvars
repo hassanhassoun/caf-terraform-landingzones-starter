@@ -65,8 +65,8 @@ azure_devops = {
         ARM_USE_MSI           = "false"
       }
     }
-    management_client_id = {
-      name         = "management-client-id"
+    level0_client_id = {
+      name         = "level0-client-id"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
@@ -77,8 +77,8 @@ azure_devops = {
         name = "caf-launchpad-level0-client-id"
       }
     }
-    management_client_secret = {
-      name         = "management-client-secret"
+    level0_client_secret = {
+      name         = "level0-client-secret"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
@@ -89,8 +89,8 @@ azure_devops = {
         name = "caf-launchpad-level0-client-secret"
       }
     }
-    management_tenant_id = {
-      name         = "management-tenant-id"
+    level0_tenant_id = {
+      name         = "level0-tenant-id"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
@@ -114,8 +114,57 @@ azure_devops = {
         name = "subscription-id"
       }
     }
+    management_client_id = {
+      name         = "management-client-id"
+      allow_access = true
+      keyvault = {
+        lz_key              = "launchpad"
+        keyvault_key        = "level0"
+        serviceendpoint_key = "sandpit"
+      }
+      variables = {
+        name = "caf-mgmt-client-id"
+      }
+    }
+    management_client_secret = {
+      name         = "management-client-secret"
+      allow_access = true
+      keyvault = {
+        lz_key              = "launchpad"
+        keyvault_key        = "level0"
+        serviceendpoint_key = "sandpit"
+      }
+      variables = {
+        name = "caf-mgmt-client-secret"
+      }
+    }
+    management_tenant_id = {
+      name         = "management-tenant-id"
+      allow_access = true
+      keyvault = {
+        lz_key              = "launchpad"
+        keyvault_key        = "level0"
+        serviceendpoint_key = "sandpit"
+      }
+      variables = {
+        name = "caf-mgmt-tenant-id"
+      }
+    }
 
-    management_tfstate_subscription = {
+    management_sp_subscription = {
+      name         = "management-sp-subscription"
+      allow_access = true
+      keyvault = {
+        lz_key              = "launchpad"
+        keyvault_key        = "level0"
+        serviceendpoint_key = "sandpit"
+      }
+      variables = {
+        name = "subscription-id"
+      }
+    }
+
+    tfstate_subscription = {
       name         = "management-tfstate-subscription"
       allow_access = true
       keyvault = {
@@ -138,7 +187,7 @@ azure_devops = {
       repo_type           = "TfsGit"
       git_repo_name       = "pipelines"
       branch_name         = "main"
-      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "management_tfstate_subscription"]
+      variable_group_keys = ["global", "level1", "level0_client_id", "level0_client_secret", "level0_tenant_id", "level0_sp_subscription", "tfstate_subscription"]
       variables = {
         landingZoneName           = "caf_solution/add-ons/azure_devops",
         buildName                 = "caf_devops",
@@ -154,7 +203,7 @@ azure_devops = {
       repo_type           = "TfsGit"
       git_repo_name       = "pipelines"
       branch_name         = "main"
-      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "management_tfstate_subscription"]
+      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "tfstate_subscription"]
       variables = {
         landingZoneName           = "caf_solution",
         buildName                 = "management",
@@ -172,7 +221,7 @@ azure_devops = {
       repo_type           = "TfsGit"
       git_repo_name       = "pipelines"
       branch_name         = "main"
-      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "management_tfstate_subscription"]
+      variable_group_keys = ["global", "level1", "level0_client_id", "level0_client_secret", "level0_tenant_id", "level0_sp_subscription", "tfstate_subscription"]
       variables = {
         landingZoneName           = "caf_solution/add-ons/azure_devops",
         buildName                 = "caf_devops",
@@ -189,7 +238,7 @@ azure_devops = {
       repo_type           = "TfsGit"
       git_repo_name       = "pipelines"
       branch_name         = "main"
-      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "management_tfstate_subscription"]
+      variable_group_keys = ["global", "level1", "management_client_id", "management_client_secret", "management_tenant_id", "management_sp_subscription", "tfstate_subscription"]
       variables = {
         landingZoneName           = "caf_solution",
         buildName                 = "management",

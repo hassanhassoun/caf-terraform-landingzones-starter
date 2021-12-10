@@ -10,4 +10,15 @@ azuread_groups_membership = {
       ]
     }
   }
+  mgmt = {
+    logged_in = {
+        keys = ["user"]
+    }
+    members = {
+      user_principal_names = [
+        "hassan.hassoun_avanade.com#EXT#@hassanhassounsandpit.onmicrosoft.com",
+        "hassan.hassoun_avanade.com#EXT#@hassanhassounsandpit.onmicrosoft.com",
+      ]
+    }
+  }
 }

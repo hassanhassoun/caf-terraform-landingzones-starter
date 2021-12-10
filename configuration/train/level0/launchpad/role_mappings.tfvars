@@ -40,6 +40,11 @@ role_mapping = {
             keys = ["level0"]
           }
         }
+        "Storage Blob Data Reader" = {
+          azuread_groups = {
+            keys = ["mgmt"]
+          }
+        }
       }
       level1 = {
         "Storage Blob Data Contributor" = {
@@ -47,7 +52,7 @@ role_mapping = {
             keys = ["user"]
           }
           azuread_groups = {
-            keys = ["level0"]
+            keys = ["level0", "mgmt"]
           }
         }
       }

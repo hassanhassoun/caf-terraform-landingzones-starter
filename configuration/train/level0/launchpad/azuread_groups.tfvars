@@ -6,4 +6,11 @@ azuread_groups = {
       service_principal_keys = ["app0"]
     }
   }
+  mgmt = {
+    name                   = "caf-mgmt"
+    prevent_duplicate_name = true
+    members = {
+      service_principal_keys = ["mgmt"]
+    }
+  }
 }

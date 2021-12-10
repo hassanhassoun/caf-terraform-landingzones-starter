@@ -1,4 +1,3 @@
-
 keyvaults = {
   level0 = {
     name               = "kvprodl0"
@@ -15,6 +14,10 @@ keyvaults = {
       level0 = {
         azuread_group_key  = "level0"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+      mgmt = {
+        azuread_group_key  = "mgmt"
+        secret_permissions = ["Get", "List"]
       }
       logged_in_user = {
         # if the key is set to "logged_in_user" add the user running terraform in the keyvault policy
@@ -37,6 +40,10 @@ keyvaults = {
     }
 
     creation_policies = {
+      mgmt = {
+        azuread_group_key  = "mgmt"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
       level0 = {
         azuread_group_key  = "level0"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]

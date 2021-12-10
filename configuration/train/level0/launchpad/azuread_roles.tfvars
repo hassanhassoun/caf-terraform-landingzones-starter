@@ -11,5 +11,12 @@ azuread_roles = {
         "Groups Administrator"
       ]
     }
+    mgmt = {
+      roles = [
+        "Privileged Role Administrator",
+        "Application Administrator",
+        "Groups Administrator"
+      ]
+    }
   }
 }

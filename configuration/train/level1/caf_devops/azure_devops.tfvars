@@ -103,7 +103,7 @@ azure_devops = {
     }
 
     level0_sp_subscription = {
-      name         = "management-sp-subscription"
+      name         = "level0-sp-subscription"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"

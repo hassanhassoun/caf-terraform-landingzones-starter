@@ -1,6 +1,6 @@
 keyvaults = {
   level0 = {
-    name               = "kvprodl0"
+    name               = "l0"
     resource_group_key = "level0"
     sku_name           = "standard"
     tags = {
@@ -29,7 +29,7 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "kvprodl1"
+    name               = "l1"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {
@@ -58,7 +58,7 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "kvprodl2"
+    name               = "l2"
     resource_group_key = "level2"
     sku_name           = "standard"
     tags = {
@@ -82,7 +82,7 @@ keyvaults = {
 
   }
   mgmt = {
-    name               = "kvprodmgmt"
+    name               = "mgmt"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {

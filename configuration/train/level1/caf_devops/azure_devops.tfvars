@@ -36,6 +36,7 @@ azure_devops = {
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
         LANDINGZONE_BRANCH  = "hhh"
+        LAUNCHPAD_SWITCH  = ""
         CONFIGURATION_ROOT  = "train"
       }
     }

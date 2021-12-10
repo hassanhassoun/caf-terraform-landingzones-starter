@@ -102,7 +102,7 @@ azure_devops = {
       }
     }
 
-    management_sp_subscription = {
+    level0_sp_subscription = {
       name         = "management-sp-subscription"
       allow_access = true
       keyvault = {
@@ -165,7 +165,7 @@ azure_devops = {
     }
 
     tfstate_subscription = {
-      name         = "management-tfstate-subscription"
+      name         = "tfstate-subscription"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"

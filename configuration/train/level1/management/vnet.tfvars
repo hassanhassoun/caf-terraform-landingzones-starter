@@ -1,20 +1,3 @@
-vnet_peerings = {
-  hub_re1_TO_hub_re2 = {
-    name = "hub_re1_TO_hub_re2"
-    from = {
-      vnet_key = "hub_re1"
-      
-    }
-    to = {
-      vnet_key = "hub_re2"
-      lz_key = "management_sbox"
-    }
-    allow_virtual_network_access = true
-    allow_forwarded_traffic      = false
-    allow_gateway_transit        = false
-    use_remote_gateways          = false
-  }
-}
 resource_groups = {
   vnet_hub_re1 = {
     name   = "vnet-hub-re1"

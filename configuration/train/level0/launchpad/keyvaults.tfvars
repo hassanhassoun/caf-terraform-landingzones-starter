@@ -81,4 +81,28 @@ keyvaults = {
     }
 
   }
+  mgmt = {
+    name               = "kvprodmgmt"
+    resource_group_key = "level1"
+    sku_name           = "standard"
+    tags = {
+    }
+
+    creation_policies = {
+      level0 = {
+        azuread_group_key  = "level0"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+      logged_in_user = {
+        # if the key is set to "logged_in_user" add the user running terraform in the keyvault policy
+        # More examples in /examples/keyvault
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+      mgmt = {
+        azuread_group_key  = "mgmt"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+    }
+
+  }
 }

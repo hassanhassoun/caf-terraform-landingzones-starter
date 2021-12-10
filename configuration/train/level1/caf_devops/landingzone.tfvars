@@ -60,6 +60,13 @@ keyvault_access_policies_azuread_apps = {
       secret_permissions = ["Get", "List"]
     }
   }
+  mgmt = {
+    devops = {
+      keyvault_lz_key    = "launchpad"
+      azuread_app_key    = "devops"
+      secret_permissions = ["Get", "List"]
+    }
+  }
 }
 
 

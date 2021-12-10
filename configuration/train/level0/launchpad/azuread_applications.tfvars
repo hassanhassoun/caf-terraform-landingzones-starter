@@ -16,8 +16,8 @@ azuread_apps = {
     application_name             = "caf-mgmt"
     app_role_assignment_required = true
     keyvaults = {
-      level0 = {
-        secret_prefix = "caf-mgmt"
+      mgmt = {
+        secret_prefix = "caf-launchpad"
       }
     }
   }

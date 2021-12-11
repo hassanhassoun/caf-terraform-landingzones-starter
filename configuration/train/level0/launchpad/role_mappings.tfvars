@@ -34,7 +34,7 @@ role_mapping = {
         }
         "Reader" = {
           azuread_groups = {
-            keys = ["identity"]
+            keys = ["identity", "management"]
           }
         }
       }

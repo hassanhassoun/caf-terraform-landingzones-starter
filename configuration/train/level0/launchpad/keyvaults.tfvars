@@ -16,6 +16,10 @@ keyvaults = {
         azuread_group_key  = "caf_platform_maintainers"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
       }
+      management = {
+        azuread_group_key  = "management"
+        secret_permissions = ["Get", "List"]
+      }
     }
 
   }

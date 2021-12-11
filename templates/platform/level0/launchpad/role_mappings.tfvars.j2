@@ -61,7 +61,7 @@ role_mapping = {
 {% if config.platform_identity.azuread_identity_mode != 'logged_in_user' %}
       "Reader" = {
         azuread_groups = {
-          keys = ["identity"]
+          keys = ["identity", "management"]
         }
       }
 {% endif %}

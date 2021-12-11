@@ -86,4 +86,31 @@ keyvaults = {
     }
 
   }
+
+  management = {
+    name               = "{{ resources.subscriptions[subscription_key].keyvaults.management.name }}"
+    resource_group_key = "{{ resources.subscriptions[subscription_key].keyvaults.management.resource_group_key }}"
+    sku_name           = "{{ config.platform_core_setup.sku.keyvault}}"
+
+    creation_policies = {
+{% if config.platform_identity.azuread_identity_mode != 'logged_in_user' %}
+      caf_platform_maintainers = {
+        azuread_group_key  = "caf_platform_maintainers"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+      management = {
+        azuread_group_key  = "management"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+{% endif %}
+{% if config.platform_identity.azuread_identity_mode == 'logged_in_user' %}
+      logged_in_user = {
+        # if the key is set to "logged_in_user" add the user running terraform in the keyvault policy
+        # More examples in /examples/keyvault
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+{% endif %}
+    }
+
+  }
 }

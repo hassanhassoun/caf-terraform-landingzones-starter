@@ -132,6 +132,19 @@
         level: "level1"
         subscription_key: management
 
+## devops
+    - name: "{{ level }}-{{ base_folder }} | devops services"
+      import_tasks: "{{ level }}/{{ base_folder }}/ansible.yaml"
+      when:
+        - (config.platform_devops.enable | bool)
+        # - (level1_subscriptions is not skipped)
+        # - platform_subscriptions_details is defined
+
+      vars:
+        base_folder: "devops"
+        level: "level1"
+        subscription_key: devops
+
 ## identity
     - name: "{{ level }}-{{ base_folder }} | Identity services"
       import_tasks: "{{ level }}/{{ base_folder }}/ansible.yaml"

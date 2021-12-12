@@ -26,6 +26,14 @@ role_mapping = {
       }
     }
     subscriptions = {
+      "Hassan Hassoun Sandbox" = {
+         lz_key = "seed"
+        "Owner" = {
+          azuread_groups = {
+            keys = ["management"]
+          }
+        }
+      }
       logged_in_subscription = {
         "Owner" = {
           azuread_groups = {

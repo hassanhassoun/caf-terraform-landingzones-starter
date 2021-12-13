@@ -15,6 +15,14 @@
   set_fact:
     destination_path: "{{ config.configuration_folders.platform.destination_base_path }}/{{ config.configuration_folders.platform.destination_relative_path }}/{{ level }}/{{ base_folder }}"
 
+- name: "[{{ level }}-{{ base_folder }}] - Get rover version"
+  include_vars:
+    name: devcontainer
+    dir: "/tf/caf/.devcontainer/"
+    depth: 1
+    ignore_unknown_extensions: true
+    files_matching: "docker-compose.yml"
+
 - name: "[{{ level }}-{{ base_folder }}] - Load variables"
   include_vars:
     name: resources

@@ -1,0 +1,11 @@
+subscriptions:
+  management:
+    resource_groups:
+      management:
+        name: mgmt
+    service_health_alerts:
+      emails:
+        email_hassan:
+          resource_group_key: management
+          name: email_alert_to_hassan
+          email_address: hassan.hassoun@avanade.com

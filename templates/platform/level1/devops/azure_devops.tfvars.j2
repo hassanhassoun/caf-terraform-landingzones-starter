@@ -13,10 +13,10 @@ azure_devops = {
   }
 
   service_endpoints = {
-    sandpit = {
-      endpoint_name       = "Hassan Hassoun Sandpit"
-      subscription_name   = "Hassan Hassoun Sandpit"
-      subscription_id     = "e59609a0-4cb2-4567-923e-ea8abc260726"
+    launchpad_service_connection = {
+      endpoint_name       = "{{ config.caf_terraform.launchpad.subscription_name }}"
+      subscription_name   = "{{ config.caf_terraform.launchpad.subscription_name }}"
+      subscription_id     = "{{ config.caf_terraform.launchpad.subscription_id }}"
       aad_app_key         = "devops"
       secret_keyvault_key = "devops"
     }
@@ -34,10 +34,10 @@ azure_devops = {
         TF_CLI_ARGS_init    = ""
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
-        ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "hhh"
+        ENVIRONMENT         = "{{ config.caf_terraform.launchpad.caf_environment }}"
+        LANDINGZONE_BRANCH  = "{{ config.platform_devops.landingzone_branch }}"
         LAUNCHPAD_SWITCH  = ""
-        CONFIGURATION_ROOT  = "train"
+        CONFIGURATION_ROOT  = "{{ config.platform_devops.configuration_root }}"
       }
     }
 
@@ -71,7 +71,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-client-id"
@@ -83,7 +83,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-client-secret"
@@ -95,7 +95,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-tenant-id"
@@ -108,7 +108,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "subscription-id"
@@ -120,7 +120,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "management"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-client-id"
@@ -132,7 +132,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "management"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-client-secret"
@@ -144,7 +144,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "management"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-tenant-id"
@@ -156,7 +156,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "management"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "subscription-id"
@@ -169,7 +169,7 @@ azure_devops = {
       keyvault = {
         lz_key              = "launchpad"
         keyvault_key        = "level0"
-        serviceendpoint_key = "sandpit"
+        serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "tfstate-subscription-id"

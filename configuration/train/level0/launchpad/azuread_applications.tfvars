@@ -1,17 +1,3 @@
-azuread_apps = {
-  aadapp = {
-    useprefix                    = false
-    application_name             = "aadapp-caf-launchpad-level0"
-    app_role_assignment_required = true
-    keyvaults = {
-      level0 = {
-        secret_prefix = "aadapp-caf-launchpad-level0"
-      }
-    }
-    # Store the ${secret_prefix}-client-id, ${secret_prefix}-client-secret...
-    # Set the policy during the creation process of the launchpad
-  }
-}
 azuread_applications = {
   level0 = {
     application_name = "sp-caf-level0"

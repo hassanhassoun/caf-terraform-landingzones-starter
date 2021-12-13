@@ -12,11 +12,11 @@ rover login -t hassanhassounsandpit
 rover \
   -lz /tf/caf/landingzones/caf_solution \
   -var-folder /tf/caf/configuration/train/level1/management \
-  -tfstate_subscription_id set_subscription_guid \
-  -target_subscription set_subscription_guid \
+  -tfstate_subscription_id e59609a0-4cb2-4567-923e-ea8abc260726 \
+  -target_subscription e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate management.tfstate \
   -log-severity ERROR \
-  -env demo \
+  -env sandpit \
   -level level1 \
   -p ${TF_DATA_DIR}/management.tfstate.tfplan \
   -a plan

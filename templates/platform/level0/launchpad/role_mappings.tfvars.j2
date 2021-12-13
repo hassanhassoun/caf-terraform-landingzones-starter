@@ -50,7 +50,8 @@ role_mapping = {
 {% endif %}
 {% if config.platform_identity.azuread_identity_mode != 'logged_in_user' %}
   subscriptions = {
-    "Hassan Hassoun Sandbox" = {
+{% if config.platform_management.subscription_display_name is defined %}
+    "{{ config.platform_management.subscription_display_name}}" = {
        lz_key = "seed"
       "Owner" = {
         azuread_groups = {
@@ -58,6 +59,7 @@ role_mapping = {
         }
       }
     }
+{% endif %}
     logged_in_subscription = {
 {% if config.platform_identity.azuread_identity_mode != 'logged_in_user' %}
       "Owner" = {

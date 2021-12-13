@@ -1,7 +1,7 @@
 
 storage_accounts = {
   level0 = {
-    name                     = "stgprodl0"
+    name                     = "l0"
     resource_group_key       = "level0"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -10,9 +10,9 @@ storage_accounts = {
       ## Those tags must never be changed after being set as they are used by the rover to locate the launchpad and the tfstates.
       # Only adjust the environment value at creation time
       tfstate         = "level0"
-      environment     = "demo"
+      environment     = "sandpit"
       launchpad       = "launchpad"
-      caf_environment = "demo"
+      caf_environment = "sandpit"
       caf_launchpad   = "launchpad"
       caf_tfstate     = "level0"
       ##
@@ -30,7 +30,7 @@ storage_accounts = {
   }
 
   level1 = {
-    name                     = "stgprodl1"
+    name                     = "l1"
     resource_group_key       = "level1"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -38,9 +38,9 @@ storage_accounts = {
     tags = {
       # Those tags must never be changed while set as they are used by the rover to locate the launchpad and the tfstates.
       tfstate         = "level1"
-      environment     = "demo"
+      environment     = "sandpit"
       launchpad       = "launchpad"
-      caf_environment = "demo"
+      caf_environment = "sandpit"
       caf_launchpad   = "launchpad"
       caf_tfstate     = "level1"
     }
@@ -57,7 +57,7 @@ storage_accounts = {
   }
 
   level2 = {
-    name                     = "stgprodl2"
+    name                     = "l2"
     resource_group_key       = "level2"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -65,9 +65,9 @@ storage_accounts = {
     tags = {
       # Those tags must never be changed while set as they are used by the rover to locate the launchpad and the tfstates.
       tfstate         = "level2"
-      environment     = "demo"
+      environment     = "sandpit"
       launchpad       = "launchpad"
-      caf_environment = "demo"
+      caf_environment = "sandpit"
       caf_launchpad   = "launchpad"
       caf_tfstate     = "level2"
     }

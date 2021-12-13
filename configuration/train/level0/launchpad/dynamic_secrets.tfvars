@@ -3,6 +3,14 @@
 # Those values are used by the rover to connect the current remote state and
 # identity the lower level
 dynamic_keyvault_secrets = {
+  management = {
+    management_subscription_id = {
+      output_key    = "subscriptions"
+      resource_key  = "Hassan Hassoun Sandbox"
+      attribute_key = "subscription-id"
+      secret_name   = "subscription-id"
+    }
+  }
   level0 = {
     subscription_id = {
       output_key    = "client_config"

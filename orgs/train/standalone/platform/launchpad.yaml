@@ -5,8 +5,6 @@ resources:
 subscriptions:
   launchpad:
     resource_groups:
-      testrg:
-        name: nameoftestrg
       level0:
         name: caf-level0
         tags:
@@ -22,24 +20,24 @@ subscriptions:
 
     storage_accounts:
       level0:
-        name: stgprodl0
+        name: l0
         resource_group_key: level0
       level1:
-        name: stgprodl1
+        name: l1
         resource_group_key: level1
       level2:
-        name: stgprodl2
+        name: l2
         resource_group_key: level2
 
     keyvaults:
       level0:
-        name: kvprodl0
+        name: l0
         resource_group_key: level0
       level1:
-        name: kvprodl1
+        name: l1
         resource_group_key: level1
       level2:
-        name: kvprodl2
+        name: l2
         resource_group_key: level2
       management:
         name: mgmt

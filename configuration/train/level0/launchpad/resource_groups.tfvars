@@ -1,8 +1,4 @@
 resource_groups = {
-  testrg = {
-    name   = "nameoftestrg"
-    region = "region1"
-  }
   level0 = {
     name   = "caf-level0"
     region = "region1"

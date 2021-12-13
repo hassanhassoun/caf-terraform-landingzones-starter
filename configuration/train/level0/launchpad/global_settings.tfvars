@@ -10,10 +10,12 @@ passthrough = false
 # Enable tag inheritance (can be changed)
 inherit_tags = false
 # When passthrough is set to false, define the number of random characters to add to the names
-random_length = 5
+random_length = 3
 
 # Default region. When not set to a resource it will use that value
 default_region = "region1"
+
+prefix = "train"
 
 # You can reference the regions by using region1, region2 or set your own keys
 regions = {

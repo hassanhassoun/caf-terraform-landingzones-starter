@@ -1,4 +1,4 @@
-# Launchpad - demo
+# Launchpad - sandpit
 
 ## Pre-requisites
 
@@ -16,7 +16,7 @@ This scenario requires the following privileges:
 Elevate your credentials to the tenant root level to have enough privileges to create the management group hierarchy.
 
 ```bash
-# Login to the subscription set_subscription_name with an account owner.
+# Login to the subscription Hassan Hassoun Sandpit with an account owner.
 rover login -t hassanhassounsandpit
 az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
 
@@ -25,8 +25,8 @@ az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?ap
 ### Launchpad
 
 ```bash
-# Login to the subscription set_subscription_name with an account owner.
-rover login -t hassanhassounsandpit -s set_subscription_guid
+# Login to the subscription Hassan Hassoun Sandpit with an account owner.
+rover login -t hassanhassounsandpit -s e59609a0-4cb2-4567-923e-ea8abc260726
 
 cd /tf/caf/landingzones
 git fetch origin
@@ -35,12 +35,12 @@ git checkout patch.5.4.4
 rover \
   -lz /tf/caf/landingzones/caf_launchpad \
   -var-folder /tf/caf/configuration/train/level0/launchpad \
-  -tfstate_subscription_id set_subscription_guid \
-  -target_subscription set_subscription_guid \
+  -tfstate_subscription_id e59609a0-4cb2-4567-923e-ea8abc260726 \
+  -target_subscription e59609a0-4cb2-4567-923e-ea8abc260726 \
   -tfstate caf_launchpad.tfstate \
   -log-severity ERROR \
   -launchpad \
-  -env demo \
+  -env sandpit \
   -level level0 \
   -p ${TF_DATA_DIR}/caf_launchpad.tfstate.tfplan \
   -a plan

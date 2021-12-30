@@ -1,6 +1,6 @@
 caf_terraform:
   billing_subscription_role_delegations:
-   azuread_user_ea_account_owner: hassan.hassoun_avanade.com#EXT#@hassanhassounsandpit.onmicrosoft.com
+   azuread_user_ea_account_owner: hassan.hassoun_avanade.com#EXT#@mailhassanhassoun441.onmicrosoft.com
    enable: false
   naming_convention:
     passthrough: false
@@ -43,11 +43,13 @@ platform_core_setup:
     subscription_deployment_mode: single_reuse
     enable_azure_subscription_vending_machine: false
     private_lib:
-      version_to_deploy: v0.3.3
+      version_to_deploy: v1.1.0
       v0.1.x:
         caf_landingzone_branch: "2107.1"
       v0.3.3:
         caf_landingzone_branch: eslz.0.3.3
+      v1.1.0:
+        caf_landingzone_branch: hhh
 
 platform_devops:
   enable: true
@@ -74,7 +76,7 @@ platform_identity:
   tenant_name: hassanhassounsandpit
   azuread_identity_mode: service_principal
   caf_platform_maintainers:
-    - hassan.hassoun_avanade.com#EXT#@hassanhassounsandpit.onmicrosoft.com
+    - hassan.hassoun_avanade.com#EXT#@mailhassanhassoun441.onmicrosoft.com
 
 # cleanup_destination - recommended to clean and recreated a clean state from template.
 configuration_folders:

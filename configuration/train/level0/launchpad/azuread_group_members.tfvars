@@ -3,6 +3,7 @@ azuread_groups_membership = {
     members = {
       user_principal_names = [
         "hassan.hassoun_avanade.com#EXT#@mailhassanhassoun441.onmicrosoft.com",
+        "hassan.hassoun_avanade.com#EXT#@mailhassanhassoun441.onmicrosoft.com",
       ]
     }
   }

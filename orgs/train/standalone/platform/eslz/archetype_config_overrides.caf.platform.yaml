@@ -4,15 +4,15 @@ archetype_definitions:
     policy_assignments:
       Allowed-Locations:
         listOfAllowedLocations:
-          - southeastasia
-          - eastasia
+          - canadacentral
+          - canadaeast
       Deny-RSG-Locations:
         listOfAllowedLocations:
-          - southeastasia
-          - eastasia
+          - canadacentral
+          - canadaeast
       Deploy-ASC-Monitoring:
       Deploy-ASC-Defender:
-        emailSecurityContact: change_me@contoso.com
+        emailSecurityContact: hassan.hassoun@avanade.com
         logAnalytics:
           lz_key: management
           output_key: diagnostics

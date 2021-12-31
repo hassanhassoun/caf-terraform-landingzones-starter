@@ -9,3 +9,20 @@ subscriptions:
           resource_group_key: management
           name: email_alert_to_hassan
           email_address: hassan.hassoun@avanade.com
+    automation_accounts:
+      auto1:
+        name: "automation"
+        sku: "basic"
+        resource_group_key: "management"
+    diagnostic_log_analytics:
+      central_logs_cc:
+        region: "region1"
+        name: "log"
+        resource_group_key: "management"
+        # you can setup up to 5 key
+        diagnostic_profiles:
+          central_logs_region1:
+            definition_key: "log_analytics"
+            destination_type: "log_analytics"
+            destination_key: "central_logs"
+    diagnostics_destinations:

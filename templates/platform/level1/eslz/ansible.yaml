@@ -49,10 +49,10 @@
 
 - name: "{{ level }}-{{ base_folder }} |  overrides"
   when:
-    - mg_custom.archetype_definitions is defined
+    - mg.archetype_definitions is defined
   ansible.builtin.template:
     src: "{{ item }}"
     dest: "{{ config.configuration_folders.platform.destination_base_path }}/{{ config.configuration_folders.platform.destination_relative_path }}/{{ level }}/{{ base_folder }}/{{ item | basename | regex_replace('.j2$', '') }}"
     force: yes
   with_fileglob:
-    - "{{ level }}/{{ base_folder }}/lib/{{ config.platform_core_setup.enterprise_scale.private_lib.version_to_deploy }}/*.tfvars.j2"
+    - "{{ level }}/{{ base_folder }}/lib/{{ config.platform_core_setup.enterprise_scale.private_lib.version_to_deploy }}/archetype_config_overrides.tfvars.j2"

@@ -8,9 +8,21 @@ subscription_id_overrides = {
 {% endif %}
   decommissioned = []
   sandboxes      = []
-  landing-zones  = ["89cbdaf0-0e38-4cc2-a186-554fa353aaeb"]
+  landing-zones  = []
   platform       = []
   connectivity   = []
   management     = []
   identity       = []
+}
+
+subscription_id_overrides_by_keys = {
+{% for mg_group in ["root", "decommissioned", "sandboxes", "landing-zones", "platform", "connectivity", "management", "identity"] %}
+  {{ mg_group }}      = [
+{% if mg.archetype_definitions[mg_group]["subscription_id_overrides_by_keys"] is defined %}
+  {% for sub in mg.archetype_definitions[mg_group]["subscription_id_overrides_by_keys"] %}
+ { lz_key = "{{ config.tfstates.platform.launchpad.lz_key_name }}", key = "{{ sub }}"}
+  {% endfor %}
+{% endif %}
+  ]
+{% endfor %}
 }

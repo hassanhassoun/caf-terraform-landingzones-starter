@@ -151,6 +151,7 @@ archetype_definitions:
       Enforce-EncryptTransit:
   landing-zones:
     archetype_id: es_landing_zones
+    subscription_id_overrides_by_keys: ["Hassan Hassoun Sandbox"]
     policy_assignments:
       CIS-v1.3.0:
         JavaLatestVersion: "10"

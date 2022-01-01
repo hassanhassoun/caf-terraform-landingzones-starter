@@ -2,9 +2,29 @@ subscription_id_overrides = {
   root           = []
   decommissioned = []
   sandboxes      = []
-  landing-zones  = ["89cbdaf0-0e38-4cc2-a186-554fa353aaeb"]
+  landing-zones  = []
   platform       = []
   connectivity   = []
   management     = []
   identity       = []
+}
+
+subscription_id_overrides_by_keys = {
+  root = [
+  ]
+  decommissioned = [
+  ]
+  sandboxes = [
+  ]
+  landing-zones = [
+    { lz_key = "launchpad", key = "Hassan Hassoun Sandbox" }
+  ]
+  platform = [
+  ]
+  connectivity = [
+  ]
+  management = [
+  ]
+  identity = [
+  ]
 }

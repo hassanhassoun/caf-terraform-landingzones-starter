@@ -149,3 +149,22 @@ archetype_definitions:
       Deploy-Sql-Security:
       Enforce-Encryption-CMK:
       Enforce-EncryptTransit:
+  landing-zones:
+    archetype_id: es_landing_zones
+    policy_assignments:
+      CIS-v1.3.0:
+        JavaLatestVersion: "10"
+      Deny-IP-Forwarding:
+      Deny-RDP-From-Internet:
+      Deny-Storage-http:
+      Deny-Subnet-Without-Nsg:
+      Deploy-AKS-Policy:
+      Deploy-SQL-DB-Auditing:
+      Deploy-SQL-Threat:
+      Deploy-VM-Backup:
+      Deny-Priv-Escalation-AKS:
+      Deny-Priv-Containers-AKS:
+      Enable-DDoS-VNET:
+      Enforce-AKS-HTTPS:
+      Enforce-TLS-SSL:
+        AKSIngressHttpsOnlyEffect: audit

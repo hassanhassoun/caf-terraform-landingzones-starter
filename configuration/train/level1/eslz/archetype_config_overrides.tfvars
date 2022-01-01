@@ -50,4 +50,21 @@ archetype_config_overrides = {
     access_control = {}
   }
 
+  landing-zones = {
+    archetype_id = "es_landing_zones"
+    parameters = {
+      "CIS-v1.3.0" = {
+        "JavaLatestVersion" = {
+          value = "10"
+        }
+      }
+      "Enforce-TLS-SSL" = {
+        "AKSIngressHttpsOnlyEffect" = {
+          value = "audit"
+        }
+      }
+    }
+    access_control = {}
+  }
+
 }

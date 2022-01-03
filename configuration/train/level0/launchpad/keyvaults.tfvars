@@ -1,7 +1,7 @@
 
 keyvaults = {
   level0 = {
-    name               = "l0"
+    name               = "caf-mgmt-cc-000"
     resource_group_key = "level0"
     sku_name           = "standard"
     tags = {
@@ -25,7 +25,7 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "l1"
+    name               = "caf-mgmt-cc-001"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {
@@ -45,7 +45,7 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "l2"
+    name               = "caf-mgmt-cc-002"
     resource_group_key = "level2"
     sku_name           = "standard"
     tags = {
@@ -65,7 +65,7 @@ keyvaults = {
   }
 
   management = {
-    name               = "mgmt"
+    name               = "caf-mgmt-cc-003"
     resource_group_key = "level1"
     sku_name           = "standard"
 

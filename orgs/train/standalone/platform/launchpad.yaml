@@ -31,14 +31,14 @@ subscriptions:
 
     keyvaults:
       level0:
-        name: l0
+        name: "000"
         resource_group_key: level0
       level1:
-        name: l1
+        name: "001"
         resource_group_key: level1
       level2:
-        name: l2
+        name: "002"
         resource_group_key: level2
       management:
-        name: mgmt
+        name: "003"
         resource_group_key: level1

@@ -1,7 +1,9 @@
 
 storage_accounts = {
   level0 = {
-    name                     = "{{ resources.subscriptions[subscription_key].storage_accounts.level0.name }}"
+{% set region_key = resources.subscriptions[subscription_key].storage_accounts.level0.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].storage_accounts.level0.name }}"
     resource_group_key       = "{{ resources.subscriptions[subscription_key].storage_accounts.level0.resource_group_key }}"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -30,7 +32,9 @@ storage_accounts = {
   }
 
   level1 = {
-    name                     = "{{ resources.subscriptions[subscription_key].storage_accounts.level1.name }}"
+{% set region_key = resources.subscriptions[subscription_key].storage_accounts.level1.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].storage_accounts.level1.name }}"
     resource_group_key       = "{{ resources.subscriptions[subscription_key].storage_accounts.level1.resource_group_key }}"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -57,7 +61,9 @@ storage_accounts = {
   }
 
   level2 = {
-    name                     = "{{ resources.subscriptions[subscription_key].storage_accounts.level2.name }}"
+{% set region_key = resources.subscriptions[subscription_key].storage_accounts.level2.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].storage_accounts.level2.name }}"
     resource_group_key       = "{{ resources.subscriptions[subscription_key].storage_accounts.level2.resource_group_key }}"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"

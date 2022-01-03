@@ -1,7 +1,7 @@
 - name: Set subscription type
   set_fact:
     subscription_type: "mgmt"
-    caf_application: "lpad"
+    caf_application: "caf"
 
 - name: "[{{ level }}-{{ base_folder }}] - Set variables"
   set_fact:

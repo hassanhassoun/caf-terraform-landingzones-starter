@@ -10,7 +10,7 @@ passthrough = false
 # Enable tag inheritance (can be changed)
 inherit_tags = false
 # When passthrough is set to false, define the number of random characters to add to the names
-random_length = 3
+random_length = 0
 
 # Default region. When not set to a resource it will use that value
 default_region = "region1"

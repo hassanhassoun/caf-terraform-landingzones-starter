@@ -1,20 +1,20 @@
 resource_groups = {
   level0 = {
-    name   = "lpad-mgmt-cc-000"
+    name   = "caf-mgmt-cc-000"
     region = "region1"
     tags = {
       level = "level0"
     }
   }
   level1 = {
-    name   = "lpad-mgmt-cc-001"
+    name   = "caf-mgmt-cc-001"
     region = "region1"
     tags = {
       level = "level1"
     }
   }
   level2 = {
-    name   = "lpad-mgmt-cc-002"
+    name   = "caf-mgmt-cc-002"
     region = "region1"
     tags = {
       level = "level2"

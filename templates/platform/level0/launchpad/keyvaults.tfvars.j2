@@ -1,7 +1,9 @@
 
 keyvaults = {
   level0 = {
-    name               = "{{ resources.subscriptions[subscription_key].keyvaults.level0.name }}"
+{% set region_key = resources.subscriptions[subscription_key].keyvaults.level0.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].keyvaults.level0.name }}"
     resource_group_key = "{{ resources.subscriptions[subscription_key].keyvaults.level0.resource_group_key }}"
     sku_name           = "{{ config.platform_core_setup.sku.keyvault}}"
     tags = {
@@ -34,7 +36,9 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "{{ resources.subscriptions[subscription_key].keyvaults.level1.name }}"
+{% set region_key = resources.subscriptions[subscription_key].keyvaults.level1.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].keyvaults.level1.name }}"
     resource_group_key = "{{ resources.subscriptions[subscription_key].keyvaults.level1.resource_group_key }}"
     sku_name           = "{{ config.platform_core_setup.sku.keyvault}}"
     tags = {
@@ -63,7 +67,9 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "{{ resources.subscriptions[subscription_key].keyvaults.level2.name }}"
+{% set region_key = resources.subscriptions[subscription_key].keyvaults.level2.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].keyvaults.level2.name }}"
     resource_group_key = "{{ resources.subscriptions[subscription_key].keyvaults.level2.resource_group_key }}"
     sku_name           = "{{ config.platform_core_setup.sku.keyvault}}"
     tags = {
@@ -92,7 +98,9 @@ keyvaults = {
   }
 
   management = {
-    name               = "{{ resources.subscriptions[subscription_key].keyvaults.management.name }}"
+{% set region_key = resources.subscriptions[subscription_key].keyvaults.management.name.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resources.subscriptions[subscription_key].keyvaults.management.name }}"
     resource_group_key = "{{ resources.subscriptions[subscription_key].keyvaults.management.resource_group_key }}"
     sku_name           = "{{ config.platform_core_setup.sku.keyvault}}"
 

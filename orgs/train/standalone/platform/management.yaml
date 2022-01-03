@@ -2,7 +2,10 @@ subscriptions:
   management:
     resource_groups:
       management:
-        name: mgmt
+        name: "001"
+      management_region2:
+        name: "002"
+        region_key: region2
     service_health_alerts:
       emails:
         email_hassan:
@@ -10,8 +13,8 @@ subscriptions:
           name: email_alert_to_hassan
           email_address: hassan.hassoun@avanade.com
     automation_accounts:
-      auto1:
-        name: "automation"
+      primary_aa:
+        name: "mgmt"
         sku: "basic"
         resource_group_key: "management"
     diagnostic_log_analytics:

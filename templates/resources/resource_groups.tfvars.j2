@@ -1,7 +1,9 @@
 resource_groups = {
 {% for key, resource_group in resources.subscriptions[subscription_key].resource_groups.items() %}
+{% set region_key = resource_group.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
   {{ key }} = {
-    name   = "{{ resource_group.name }}"
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ resource_group.name }}"
     region = "{{ resource_group.region_key | default(config.caf_terraform.launchpad.default_region_key) }}"
 {% if resource_group.tags is defined %}
     tags   = {

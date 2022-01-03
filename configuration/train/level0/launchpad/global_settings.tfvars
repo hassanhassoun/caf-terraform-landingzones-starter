@@ -20,6 +20,7 @@ prefix = "train"
 # You can reference the regions by using region1, region2 or set your own keys
 regions = {
   region1 = "Canada Central"
+  region2 = "Canada East"
 }
 
 # Rover will adjust some tags to enable the discovery of the launchpad.

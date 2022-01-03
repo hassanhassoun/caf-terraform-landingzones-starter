@@ -22,6 +22,9 @@ caf_terraform:
       region1:
         name: Canada Central
         slug: cc
+      region2:
+        name: Canada East
+        slug: ce
     tags:
       ApplicationOwner: CAF_demo
       deploymentType: Terraform

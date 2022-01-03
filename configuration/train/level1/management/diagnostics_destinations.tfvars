@@ -10,6 +10,9 @@ diagnostics_destinations = {
       "Canada Central" = {
         storage_account_key = "diagsiem_cc"
       }
+      "Canada East" = {
+        storage_account_key = "diagsiem_cc"
+      }
     }
   }
 

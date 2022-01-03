@@ -1,3 +1,8 @@
+- name: Set subscription type
+  set_fact:
+    subscription_type: "mgmt"
+    caf_application: "log"
+
 - name: "[{{ level }}-{{ base_folder }}] Clean-up directory"
   file:
     path: "{{ config.configuration_folders.platform.destination_base_path }}/{{ config.configuration_folders.platform.destination_relative_path }}/{{ level }}/{{ base_folder }}"

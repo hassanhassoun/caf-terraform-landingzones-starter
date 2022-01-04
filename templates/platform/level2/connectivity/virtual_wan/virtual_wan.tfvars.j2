@@ -1,8 +1,10 @@
 virtual_wans = {
 {% for key, vwan in connectivity_virtual_wan.virtual_wans.items() %}
+{% set region_key = vwan.region_key | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
   "{{key}}" = {
     resource_group_key = "{{ vwan.resource_group_key }}"
-    name               = "{{ vwan.name }}"
+    name   = "{{ connectivity_virtual_wan.application_name | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ vwan.name }}"
     region             = "{{ vwan.region_key }}"
   }
 {% endfor %}

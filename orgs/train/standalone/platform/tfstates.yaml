@@ -62,12 +62,12 @@ tfstates:
         workspace: tfstate
         base_config_path: connectivity/virtual_hub
         level: level2
-      non_prod:
-        lz_key_name: connectivity_virtual_hub_non_prod
-        tfstate: connectivity_virtual_hub_non_prod.tfstate
-        workspace: tfstate
-        base_config_path: connectivity/virtual_hub
-        level: level2
+          #      non_prod:
+          #        lz_key_name: connectivity_virtual_hub_non_prod
+          #        tfstate: connectivity_virtual_hub_non_prod.tfstate
+          #        workspace: tfstate
+          #        base_config_path: connectivity/virtual_hub
+          #        level: level2
 
     vpn_sites:
       prod:

@@ -6,7 +6,7 @@ dynamic_keyvault_secrets = {
   management = {
     management_subscription_id = {
       output_key    = "subscriptions"
-      resource_key  = "Hassan Hassoun Sandbox"
+      resource_key  = "Hassan Hassoun Sandpit"
       attribute_key = "subscription-id"
       secret_name   = "subscription-id"
     }

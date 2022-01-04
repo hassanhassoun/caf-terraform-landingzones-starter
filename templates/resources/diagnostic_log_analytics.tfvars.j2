@@ -6,7 +6,9 @@ diagnostic_log_analytics = {
 {% for key, dla in resources.subscriptions[subscription_key].diagnostic_log_analytics.items() %}
   {{ key }} = {
     region             = "{{ dla.region | default(config.caf_terraform.launchpad.default_region_key)}}"
-    name               = "{{ dla.name }}"
+{% set region_key = dla.region | default(config.caf_terraform.launchpad.default_region_key) %}
+{% set slug = config.caf_terraform.launchpad.regions[region_key].slug %}
+    name   = "{{ caf_application | default('caf', boolean=true) }}-{{ slug }}-{{ dla.name }}"
     resource_group_key = "{{ dla.resource_group_key }}"
     # you can setup up to 5 key
 

@@ -1,7 +1,7 @@
 - name: Set subscription type
   set_fact:
     subscription_type: "mgmt"
-    caf_application: "log"
+    caf_application: "diag"
 
 - name: "[{{ level }}-{{ base_folder }}] Clean-up directory"
   file:

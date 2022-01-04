@@ -26,7 +26,7 @@ role_mapping = {
       }
     }
     subscriptions = {
-      "Hassan Hassoun Sandbox" = {
+      "Hassan Hassoun Sandpit" = {
         lz_key = "seed"
         "Owner" = {
           azuread_groups = {

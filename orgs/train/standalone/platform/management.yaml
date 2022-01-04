@@ -14,13 +14,13 @@ subscriptions:
           email_address: hassan.hassoun@avanade.com
     automation_accounts:
       primary_aa:
-        name: "mgmt"
+        name: "001"
         sku: "basic"
         resource_group_key: "management"
     diagnostic_log_analytics:
       central_logs_cc:
         region: "region1"
-        name: "log"
+        name: "001"
         resource_group_key: "management"
         # you can setup up to 5 key
         diagnostic_profiles:

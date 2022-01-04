@@ -1,6 +1,6 @@
 automations = {
   primary_aa = {
-    name               = "mgmt-cc"
+    name               = "diag-cc-001"
     sku                = "basic"
     resource_group_key = "management"
     region             = "region1"

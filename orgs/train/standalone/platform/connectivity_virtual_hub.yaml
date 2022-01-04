@@ -1,6 +1,6 @@
 virtual_hubs:
   prod:
-    name: prod
+    name: prod-cc-001
     hub_address_prefix: 10.10.10.0/23
     enable_er_connections: false
     deploy_s2s: false

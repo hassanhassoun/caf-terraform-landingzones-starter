@@ -10,7 +10,7 @@ virtual_hubs = {
       key    = "simple_global_wan"
     }
 
-    hub_name           = "prod"
+    hub_name           = "prod-cc-001"
     region             = "region1"
     hub_address_prefix = "10.10.10.0/23"
     deploy_firewall    = false

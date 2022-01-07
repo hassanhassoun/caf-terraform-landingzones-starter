@@ -17,7 +17,7 @@ subscription_id_overrides_by_keys = {
   sandboxes = [
   ]
   landing-zones = [
-    { lz_key = "launchpad", key = "Hassan Hassoun Sandbox" }
+    { lz_key = "launchpad", key = "Hassan Hassoun Sandpit" }
   ]
   platform = [
   ]

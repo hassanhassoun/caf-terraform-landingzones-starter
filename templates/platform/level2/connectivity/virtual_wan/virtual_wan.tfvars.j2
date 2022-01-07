@@ -6,6 +6,7 @@ virtual_wans = {
     resource_group_key = "{{ vwan.resource_group_key }}"
     name   = "{{ connectivity_virtual_wan.application_name | default('caf', boolean=true) }}-{{ subscription_type | default('caf',boolean=true) }}-{{ slug }}-{{ vwan.name }}"
     region             = "{{ vwan.region_key }}"
+    type               = "{{ vwan.type | default('Basic', boolean=true)  }}"
   }
 {% endfor %}
 }

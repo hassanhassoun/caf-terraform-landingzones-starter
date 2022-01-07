@@ -1,0 +1,11 @@
+virtual_hubs:
+  prod:
+    name: prod-cc-001
+    hub_address_prefix: 10.10.10.0/23
+    enable_er_connections: false
+    deploy_s2s: false
+    deploy_er: false
+    virtual_wan:
+      lz_key: virtual_wan
+      key: simple_global_wan
+    region_key: region1

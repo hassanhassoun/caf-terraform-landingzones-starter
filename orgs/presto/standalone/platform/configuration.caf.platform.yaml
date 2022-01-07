@@ -1,0 +1,113 @@
+caf_terraform:
+  billing_subscription_role_delegations:
+    enable: false
+  naming_convention:
+    passthrough: false
+    prefix: prst
+    inherit_tags: false
+    random_length: 0
+  launchpad:
+    subscription_id: "<subscription_id>"
+    subscription_name: "<subscription name>"
+    tenant_id: "<tenant_id>"
+    caf_environment: sandpit
+    account_replication_type: GRS
+    blob_versioning_enabled: true
+    container_delete_retention_policy: 7
+    delete_retention_policy: 7
+    default_region_key: region1
+    number_of_levels: 5
+    azuread_apps:
+      level0:
+      eslz:
+      connectivity:
+      management:
+      identity:
+      subscription_creation_platform:
+      subscription_creation_landingzones:
+    regions:
+      region1:
+        name: Canada Central
+        slug: cc
+      region2:
+        name: Canada East
+        slug: ce
+    tags:
+      ApplicationOwner: CAF_demo
+      deploymentType: Terraform
+      costCenter: 0
+      BusinessUnit: SHARED
+      DR: NON-DR-ENABLED
+
+platform_core_setup:
+  sku:
+    keyvault: standard
+  enterprise_scale:
+    enable: false
+    model: demo
+    management_group_name: "presto"
+    management_group_prefix: presto
+    deploy_core_landing_zones: true
+    clean_up_destination_folder: true
+    update_lib_folder: true
+    subscription_deployment_mode: single_reuse
+    enable_azure_subscription_vending_machine: false
+    private_lib:
+      version_to_deploy: v1.1.0
+      v0.1.x:
+        caf_landingzone_branch: "2107.1"
+      v0.3.3:
+        caf_landingzone_branch: eslz.0.3.3
+      v1.1.0:
+        caf_landingzone_branch: hhh
+
+platform_devops:
+  enable: true
+  landingzone_branch: presto
+  configuration_root: presto
+
+platform_management:
+  subscription_display_name: "Hassan Hassoun Sandpit"
+  enable: true
+  log_analytics_workspace: create_new
+  retention_in_days: 30
+  enable_monitoring:
+    - Arc
+    - VM
+    - VMSS
+
+networking_topology:
+  enable_ddos_protection_standard: true
+  private_dns_zones_for_azure_paas_services: true
+  deployment_option: virtual_wan
+
+platform_identity:
+  # Set the Azure Active Directory tenant name. Do not include the .onmicrosoft.com
+  tenant_name: hassanhassounsandpit
+  azuread_identity_mode: service_principal
+  caf_platform_maintainers:
+    - hassan.hassoun_avanade.com#EXT#@hassanhassounsandpit.onmicrosoft.com
+
+# cleanup_destination - recommended to clean and recreated a clean state from template.
+configuration_folders:
+  platform:
+    cleanup_destination: false
+    destination_base_path: /tf/caf
+    destination_relative_path: configuration/presto
+  asvm:
+    cleanup_destination: false
+    destination_base_path: /tf/caf
+    destination_relative_path: configuration/presto
+
+notifications:
+  service_health_alerts:
+    emails:
+      support1:
+        name: email_alert primary support
+        email_address: hassan.hassoun@avanade.com
+  security_center_email_contact: hassan.hassoun@avanade.com
+
+gitops:
+  caf_landingzone_branch: "patch.5.4.4"
+  deployment_mode: interactive
+  rover_log_error: ERROR

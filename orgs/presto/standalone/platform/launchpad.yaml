@@ -1,0 +1,44 @@
+resources:
+  subscriptions:
+    launchpad:
+      azuread_applications: true
+subscriptions:
+  launchpad:
+    resource_groups:
+      level0:
+        name: "000"
+        tags:
+          level: level0
+      level1:
+        name: "001"
+        tags:
+          level: level1
+      level2:
+        name: "002"
+        tags:
+          level: level2
+
+    storage_accounts:
+      level0:
+        name: "000"
+        resource_group_key: level0
+      level1:
+        name: "001"
+        resource_group_key: level1
+      level2:
+        name: "002"
+        resource_group_key: level2
+
+    keyvaults:
+      level0:
+        name: "000"
+        resource_group_key: level0
+      level1:
+        name: "001"
+        resource_group_key: level1
+      level2:
+        name: "002"
+        resource_group_key: level2
+      management:
+        name: "003"
+        resource_group_key: level1

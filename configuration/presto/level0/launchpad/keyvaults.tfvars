@@ -1,7 +1,7 @@
 
 keyvaults = {
   level0 = {
-    name               = "caf-mgmt-cc-000"
+    name               = "presto-caf-cc-000"
     resource_group_key = "level0"
     sku_name           = "standard"
     tags = {
@@ -12,6 +12,9 @@ keyvaults = {
     }
 
     creation_policies = {
+      logged_in_user  = {
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
       caf_platform_maintainers = {
         azuread_group_key  = "caf_platform_maintainers"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
@@ -25,7 +28,7 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "caf-mgmt-cc-001"
+    name               = "presto-caf-cc-001"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {
@@ -36,6 +39,9 @@ keyvaults = {
     }
 
     creation_policies = {
+      logged_in_user  = {
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
       caf_platform_maintainers = {
         azuread_group_key  = "caf_platform_maintainers"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
@@ -45,7 +51,7 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "caf-mgmt-cc-002"
+    name               = "presto-caf-cc-002"
     resource_group_key = "level2"
     sku_name           = "standard"
     tags = {
@@ -56,6 +62,9 @@ keyvaults = {
     }
 
     creation_policies = {
+      logged_in_user  = {
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
       caf_platform_maintainers = {
         azuread_group_key  = "caf_platform_maintainers"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
@@ -65,11 +74,14 @@ keyvaults = {
   }
 
   management = {
-    name               = "caf-mgmt-cc-003"
+    name               = "presto-caf-cc-003"
     resource_group_key = "level1"
     sku_name           = "standard"
 
     creation_policies = {
+      logged_in_user  = {
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
       caf_platform_maintainers = {
         azuread_group_key  = "caf_platform_maintainers"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]

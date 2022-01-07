@@ -15,7 +15,7 @@ random_length = 0
 # Default region. When not set to a resource it will use that value
 default_region = "region1"
 
-prefix = "prst"
+prefix = ""
 
 # You can reference the regions by using region1, region2 or set your own keys
 regions = {

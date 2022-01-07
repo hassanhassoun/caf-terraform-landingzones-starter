@@ -13,13 +13,13 @@ landingzone = {
 
 resource_groups = {
   rg1 = {
-    name = "devops"
+    name = "presto-devops-shared-cc-001"
   }
 }
 
 keyvaults = {
   devops = {
-    name               = "devops"
+    name               = "presto-devops-cc-003"
     resource_group_key = "rg1"
     sku_name           = "standard"
 

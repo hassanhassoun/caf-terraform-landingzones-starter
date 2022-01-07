@@ -5,37 +5,37 @@ azuread_service_principals = {
       key = "level0"
     }
   }
-  # Manage the deployment of the eslz
+  # Manage the deployment of Enterprise Scale
   eslz = {
     azuread_application = {
       key = "eslz"
     }
   }
-  # Manage the deployment of the connectivity
+  # Manage the deployment of the connectivity services
   connectivity = {
     azuread_application = {
       key = "connectivity"
     }
   }
-  # Manage the deployment of the management
+  # Manage the deployment of the shared services
   management = {
     azuread_application = {
       key = "management"
     }
   }
-  # Manage the deployment of the identity
+  # Manage the deployment of the identity services
   identity = {
     azuread_application = {
       key = "identity"
     }
   }
-  # Manage the deployment of the subscription_creation_platform
+  # Has delegation to create platform subscriptions
   subscription_creation_platform = {
     azuread_application = {
       key = "subscription_creation_platform"
     }
   }
-  # Manage the deployment of the subscription_creation_landingzones
+  # Has delegation to create landingzone subscriptions
   subscription_creation_landingzones = {
     azuread_application = {
       key = "subscription_creation_landingzones"

@@ -4,10 +4,6 @@ landingzone = {
   level               = "level2"
   key                 = "connectivity_non_prod_hubs"
   tfstates = {
-    connectivity_non_prod_spokes_acn_iits1 = {
-      level   = "current"
-      tfstate = "connectivity_non_prod_spokes_acn_iits1.tfstate"
-    }
     management = {
       level   = "lower"
       tfstate = "management.tfstate"

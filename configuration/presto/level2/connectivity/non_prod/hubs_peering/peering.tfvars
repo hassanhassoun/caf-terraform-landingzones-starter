@@ -1,6 +1,6 @@
 vnet_peerings = {
   hub_cc_001_TO_spoke_cc_001= {
-    name = "presto-hub-cc-001-TO-spoke-cc-001"
+    name = "prz-hub-cc-001-TO-spoke-cc-001"
     from = {
       vnet_key = "hub"
       lz_key = "connectivity_non_prod_hubs"

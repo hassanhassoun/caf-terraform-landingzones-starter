@@ -1,7 +1,7 @@
 
 keyvaults = {
   level0 = {
-    name               = "presto-caf-cc-000"
+    name               = "prz-ops-cc-level0"
     resource_group_key = "level0"
     sku_name           = "standard"
     tags = {
@@ -28,7 +28,7 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "presto-caf-cc-001"
+    name               = "prz-ops-cc-level1"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {
@@ -51,7 +51,7 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "presto-caf-cc-002"
+    name               = "prz-ops-cc-level2"
     resource_group_key = "level2"
     sku_name           = "standard"
     tags = {
@@ -74,7 +74,7 @@ keyvaults = {
   }
 
   management = {
-    name               = "presto-caf-cc-003"
+    name               = "prz-ops-cc-mgmt"
     resource_group_key = "level1"
     sku_name           = "standard"
 

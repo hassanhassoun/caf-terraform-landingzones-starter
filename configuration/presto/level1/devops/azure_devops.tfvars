@@ -35,9 +35,9 @@ azure_devops = {
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "presto"
+        LANDINGZONE_BRANCH  = "prz"
         LAUNCHPAD_SWITCH    = ""
-        CONFIGURATION_ROOT  = "presto"
+        CONFIGURATION_ROOT  = "prz"
       }
     }
 

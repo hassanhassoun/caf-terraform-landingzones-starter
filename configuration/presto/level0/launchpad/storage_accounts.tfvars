@@ -1,7 +1,7 @@
 
 storage_accounts = {
   level0 = {
-    name                     = "prestocafshared000"
+    name                     = "przopscclpadlevel0"
     resource_group_key       = "level0"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -30,7 +30,7 @@ storage_accounts = {
   }
 
   level1 = {
-    name                     = "prestocafshared001"
+    name                     = "przopscclpadlevel1"
     resource_group_key       = "level1"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"
@@ -57,7 +57,7 @@ storage_accounts = {
   }
 
   level2 = {
-    name                     = "prestocafshared002"
+    name                     = "przopscclpadlevel2"
     resource_group_key       = "level2"
     account_kind             = "BlobStorage"
     account_tier             = "Standard"

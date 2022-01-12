@@ -34,7 +34,7 @@ git checkout patch.5.4.4
 
 rover \
   -lz /tf/caf/landingzones/caf_launchpad \
-  -var-folder /tf/caf/configuration/presto/level0/launchpad \
+  -var-folder /tf/caf/configuration/prz/level0/launchpad \
   -tfstate_subscription_id <subscription_id> \
   -target_subscription <subscription_id> \
   -tfstate caf_launchpad.tfstate \

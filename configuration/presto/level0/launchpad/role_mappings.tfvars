@@ -6,25 +6,6 @@
 
 role_mapping = {
   built_in_role_mapping = {
-    management_group = {
-      root = {
-        "User Access Administrator" = {
-          azuread_groups = {
-            keys = ["level0"]
-          }
-        }
-        "Management Group Contributor" = {
-          azuread_groups = {
-            keys = ["eslz", "caf_platform_maintainers"]
-          }
-        }
-        "Owner" = {
-          azuread_groups = {
-            keys = ["eslz", "caf_platform_maintainers"]
-          }
-        }
-      }
-    }
     subscriptions = {
       "Hassan Hassoun Sandpit" = {
         lz_key = "seed"
@@ -35,38 +16,20 @@ role_mapping = {
         }
       }
       logged_in_subscription = {
-        "Owner" = {
-          azuread_groups = {
-            keys = ["level0", "caf_platform_maintainers", "subscription_creation_platform"]
-          }
-        }
         "Reader" = {
           azuread_groups = {
-            keys = ["identity", "management"]
+            keys = ["connectivity", "management"]
           }
         }
       }
     }
 
     resource_groups = {
-      level0 = {
-        "Reader" = {
-          azuread_groups = {
-            keys = [
-              "identity",
-              "subscription_creation_platform"
-            ]
-          }
-        }
-      }
       level1 = {
         "Reader" = {
           azuread_groups = {
             keys = [
-              "identity",
-              "management",
-              "eslz",
-              "subscription_creation_platform"
+              "management"
             ]
           }
         }
@@ -75,10 +38,8 @@ role_mapping = {
         "Reader" = {
           azuread_groups = {
             keys = [
-              "identity",
               "connectivity",
-              "management",
-              "subscription_creation_landingzones"
+              "management"
             ]
           }
         }
@@ -91,16 +52,12 @@ role_mapping = {
           logged_in = {
             keys = ["user"]
           }
-          azuread_groups = {
-            keys = ["level0", "caf_platform_maintainers", "identity"]
-          }
         }
         "Storage Blob Data Reader" = {
           azuread_groups = {
             keys = [
               "management",
-              "eslz",
-              "subscription_creation_platform"
+              "connectivity"
             ]
           }
         }
@@ -113,11 +70,7 @@ role_mapping = {
           }
           azuread_groups = {
             keys = [
-              "caf_platform_maintainers",
-              "identity",
-              "management",
-              "eslz",
-              "subscription_creation_platform"
+              "management"
             ]
           }
         }
@@ -137,10 +90,7 @@ role_mapping = {
           }
           azuread_groups = {
             keys = [
-              "identity",
               "connectivity",
-              "management",
-              "caf_platform_maintainers",
             ]
           }
         }

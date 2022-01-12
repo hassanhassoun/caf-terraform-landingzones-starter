@@ -15,10 +15,6 @@ keyvaults = {
       logged_in_user  = {
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
       }
-      caf_platform_maintainers = {
-        azuread_group_key  = "caf_platform_maintainers"
-        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
-      }
       management = {
         azuread_group_key  = "management"
         secret_permissions = ["Get", "List"]
@@ -42,10 +38,6 @@ keyvaults = {
       logged_in_user  = {
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
       }
-      caf_platform_maintainers = {
-        azuread_group_key  = "caf_platform_maintainers"
-        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
-      }
     }
 
   }
@@ -65,10 +57,6 @@ keyvaults = {
       logged_in_user  = {
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
       }
-      caf_platform_maintainers = {
-        azuread_group_key  = "caf_platform_maintainers"
-        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
-      }
     }
 
   }
@@ -80,10 +68,6 @@ keyvaults = {
 
     creation_policies = {
       logged_in_user  = {
-        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
-      }
-      caf_platform_maintainers = {
-        azuread_group_key  = "caf_platform_maintainers"
         secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
       }
       management = {

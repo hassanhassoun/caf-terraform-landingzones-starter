@@ -77,4 +77,20 @@ keyvaults = {
     }
 
   }
+  connectivity = {
+    name               = "prz-ops-cc-cnct"
+    resource_group_key = "level2"
+    sku_name           = "standard"
+
+    creation_policies = {
+      logged_in_user  = {
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+      connectivity = {
+        azuread_group_key  = "connectivity"
+        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
+      }
+    }
+
+  }
 }

@@ -13,22 +13,17 @@ landingzone = {
 
 resource_groups = {
   rg1 = {
-    name = "prz-devops-shared-cc-001"
+    name = "ops-devops-cc-001"
   }
 }
 
 keyvaults = {
   devops = {
-    name               = "prz-devops-cc-003"
+    name               = "prz-ops-cc-devops01"
     resource_group_key = "rg1"
     sku_name           = "standard"
 
     creation_policies = {
-      level0 = {
-        azuread_group_key  = "level0"
-        lz_key             = "launchpad"
-        secret_permissions = ["Set", "Get", "List", "Delete", "Purge", "Recover"]
-      }
       logged_in_user = {
         # if the key is set to "logged_in_user" add the user running terraform in the keyvault policy
         # More examples in /examples/keyvault
@@ -60,6 +55,13 @@ keyvault_access_policies_azuread_apps = {
       secret_permissions = ["Get", "List"]
     }
   }
+  connectivity = {
+    devops = {
+      keyvault_lz_key    = "launchpad"
+      azuread_app_key    = "devops"
+      secret_permissions = ["Get", "List"]
+    }
+  }
   management = {
     devops = {
       keyvault_lz_key    = "launchpad"
@@ -73,7 +75,7 @@ keyvault_access_policies_azuread_apps = {
 azuread_apps = {
   devops = {
     useprefix               = true
-    application_name        = "devops"
+    application_name        = "caf-devops-connection"
     password_expire_in_days = 60
     tenant_name             = "hassanhassounsandpit"
     keyvaults = {

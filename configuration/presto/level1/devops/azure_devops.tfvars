@@ -14,9 +14,9 @@ azure_devops = {
 
   service_endpoints = {
     launchpad_service_connection = {
-      endpoint_name       = "<subscription name>"
-      subscription_name   = "<subscription name>"
-      subscription_id     = "<subscription_id>"
+      endpoint_name       = "Hassan Hassoun Sandpit"
+      subscription_name   = "Hassan Hassoun Sandpit"
+      subscription_id     = "e59609a0-4cb2-4567-923e-ea8abc260726"
       aad_app_key         = "devops"
       secret_keyvault_key = "devops"
     }
@@ -35,9 +35,9 @@ azure_devops = {
         TF_CLI_ARGS_plan    = "'-input=false'"
         TF_VAR_ARGS_destroy = "'-auto-approve -refresh=false'"
         ENVIRONMENT         = "sandpit"
-        LANDINGZONE_BRANCH  = "prz"
+        LANDINGZONE_BRANCH  = "hhh"
         LAUNCHPAD_SWITCH    = ""
-        CONFIGURATION_ROOT  = "prz"
+        CONFIGURATION_ROOT  = "presto"
       }
     }
 
@@ -65,55 +65,58 @@ azure_devops = {
         ARM_USE_MSI           = "false"
       }
     }
-    level0_client_id = {
-      name         = "level0-client-id"
+
+    # Connectivity
+    connectivity_client_id = {
+      name         = "connectivity-client-id"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
-        keyvault_key        = "level0"
+        keyvault_key        = "connectivity"
         serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-client-id"
       }
     }
-    level0_client_secret = {
-      name         = "level0-client-secret"
+    connectivity_client_secret = {
+      name         = "connectivity-client-secret"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
-        keyvault_key        = "level0"
+        keyvault_key        = "connectivity"
         serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-client-secret"
       }
     }
-    level0_tenant_id = {
-      name         = "level0-tenant-id"
+    connectivity_tenant_id = {
+      name         = "connectivity-tenant-id"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
-        keyvault_key        = "level0"
+        keyvault_key        = "connectivity"
         serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "caf-launchpad-tenant-id"
       }
     }
-
-    level0_sp_subscription = {
-      name         = "level0-sp-subscription"
+    connectivity_subscription_id = {
+      name         = "connectivity-subscription-id"
       allow_access = true
       keyvault = {
         lz_key              = "launchpad"
-        keyvault_key        = "level0"
+        keyvault_key        = "connectivity"
         serviceendpoint_key = "launchpad_service_connection"
       }
       variables = {
         name = "subscription-id"
       }
     }
+
+    # Management
     management_client_id = {
       name         = "management-client-id"
       allow_access = true
@@ -179,24 +182,8 @@ azure_devops = {
   }
 
   pipelines = {
-    caf_devops_plan = {
-      name                = "train_devops_plan"
-      folder              = "\\configuration\\level1"
-      yaml                = ".pipelines/pipeline.yaml"
-      repo_type           = "TfsGit"
-      git_repo_name       = "pipelines"
-      branch_name         = "main"
-      variable_group_keys = ["global", "level1", "level0_client_id", "level0_client_secret", "level0_tenant_id", "level0_sp_subscription", "tfstate_subscription"]
-      variables = {
-        landingZoneName           = "caf_solution/add-ons/azure_devops",
-        buildName                 = "caf_devops",
-        level                     = "level1",
-        tfAction                  = "plan",
-        configurationSubdirectory = "",
-      }
-    }
     caf_management_plan = {
-      name                = "train_management_plan"
+      name                = "prz_non_prod_management_plan"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -208,30 +195,29 @@ azure_devops = {
         buildName                 = "management",
         level                     = "level1",
         tfAction                  = "plan",
-        configurationSubdirectory = "",
+        configurationSubdirectory = "management",
+      }
+    }
+    caf_connectivity_plan = {
+      name                = "prz_non_prod_connectivity_plan"
+      folder              = "\\configuration\\level2"
+      yaml                = ".pipelines/pipeline.yaml"
+      repo_type           = "TfsGit"
+      git_repo_name       = "pipelines"
+      branch_name         = "main"
+      variable_group_keys = ["global", "level2", "connectivity_client_id", "connectivity_client_secret", "connectivity_tenant_id", "connectivity_subscription_id", "tfstate_subscription"]
+      variables = {
+        landingZoneName           = "caf_solution",
+        buildName                 = "connectivity_non_prod_hubs",
+        level                     = "level2",
+        tfAction                  = "plan",
+        configurationSubdirectory = "connectivity/non_prod/hubs/",
       }
     }
   }
   apply_pipelines = {
-    caf_devops_apply = {
-      name                = "train_devops_apply"
-      folder              = "\\configuration\\level1"
-      yaml                = ".pipelines/pipeline.yaml"
-      repo_type           = "TfsGit"
-      git_repo_name       = "pipelines"
-      branch_name         = "main"
-      variable_group_keys = ["global", "level1", "level0_client_id", "level0_client_secret", "level0_tenant_id", "level0_sp_subscription", "tfstate_subscription"]
-      variables = {
-        landingZoneName           = "caf_solution/add-ons/azure_devops",
-        buildName                 = "caf_devops",
-        level                     = "level1",
-        tfAction                  = "apply",
-        configurationSubdirectory = "",
-        planID                    = { plan_key = "caf_devops_plan" },
-      }
-    }
     caf_management_apply = {
-      name                = "train_management_apply"
+      name                = "prz_non_prod_management_apply"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -243,8 +229,25 @@ azure_devops = {
         buildName                 = "management",
         level                     = "level1",
         tfAction                  = "apply",
-        configurationSubdirectory = "",
+        configurationSubdirectory = "management",
         planID                    = { plan_key = "caf_management_plan" },
+      }
+    }
+    caf_connectivity_apply = {
+      name                = "prz_non_prod_connectivity_apply"
+      folder              = "\\configuration\\level2"
+      yaml                = ".pipelines/pipeline.yaml"
+      repo_type           = "TfsGit"
+      git_repo_name       = "pipelines"
+      branch_name         = "main"
+      variable_group_keys = ["global", "level2", "connectivity_client_id", "connectivity_client_secret", "connectivity_tenant_id", "connectivity_subscription_id", "tfstate_subscription"]
+      variables = {
+        landingZoneName           = "caf_solution",
+        buildName                 = "connectivity_non_prod_hubs",
+        level                     = "level2",
+        tfAction                  = "apply",
+        configurationSubdirectory = "connectivity/non_prod/hubs/",
+        planID                    = { plan_key = "caf_connectivity_plan" },
       }
     }
   }

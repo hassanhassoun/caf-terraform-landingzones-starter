@@ -1,3 +1,4 @@
+global_prefix_passthrough = true
 azure_devops = {
 
   url     = "https://dev.azure.com/hassanhassoun0672/"

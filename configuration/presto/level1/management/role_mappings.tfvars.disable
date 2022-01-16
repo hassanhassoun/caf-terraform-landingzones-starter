@@ -1,0 +1,15 @@
+role_mapping = {
+  built_in_role_mapping = {
+    storage_accounts = {
+        cs210032001689e92fd = {
+          lz_key = "seed"
+          "Storage Blob Data Contributor" = {
+            azuread_groups = {
+              lz_key = "launchpad"
+              keys = ["management"]
+            }
+          }
+        }
+     }
+  }
+}

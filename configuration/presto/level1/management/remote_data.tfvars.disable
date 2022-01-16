@@ -1,0 +1,8 @@
+remote_data = {
+  storage_accounts = {
+    cs210032001689e92fd = {
+       name = "cs210032001689e92fd"
+       resource_group_name = "cloud-shell-storage-eastus"
+    }
+  }
+}

@@ -5,7 +5,7 @@
 diagnostic_log_analytics = {
   central_logs_cc = {
     region             = "region1"
-    name               = "prz-ops-cc-diag001"
+    name               = "prz-plfm-ops-cc-diag001"
     resource_group_key = "management"
     # you can setup up to 5 key
 

@@ -2,7 +2,7 @@
 /*
 public_ip_addresses = {
   vngw_pip = {
-    name               = "prz-hub-connect-cc-001"
+    name               = "ops-hub-connect-cc-001"
     resource_group_key = "rg1"
     sku                = "Basic"
     # Note: For UltraPerformance ExpressRoute Virtual Network gateway, the associated Public IP needs to be sku "Basic" not "Standard"

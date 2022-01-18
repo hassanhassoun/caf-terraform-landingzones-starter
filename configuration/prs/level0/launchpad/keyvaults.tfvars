@@ -1,7 +1,7 @@
 
 keyvaults = {
   level0 = {
-    name               = "prz-ops-cc-level0"
+    name               = "prz-plfm-ops-cc-lvl0"
     resource_group_key = "level0"
     sku_name           = "standard"
     tags = {
@@ -24,7 +24,7 @@ keyvaults = {
   }
 
   level1 = {
-    name               = "prz-ops-cc-level1"
+    name               = "prz-plfm-ops-cc-lvl1"
     resource_group_key = "level1"
     sku_name           = "standard"
     tags = {
@@ -43,7 +43,7 @@ keyvaults = {
   }
 
   level2 = {
-    name               = "prz-ops-cc-level2"
+    name               = "prz-plfm-ops-cc-lvl2"
     resource_group_key = "level2"
     sku_name           = "standard"
     tags = {
@@ -62,8 +62,8 @@ keyvaults = {
   }
 
   management = {
-    name               = "prz-ops-cc-mgmt"
-    resource_group_key = "level1"
+    name               = "prz-plfm-ops-cc-mgmt"
+    resource_group_key = "management"
     sku_name           = "standard"
 
     creation_policies = {
@@ -78,8 +78,8 @@ keyvaults = {
 
   }
   connectivity = {
-    name               = "prz-ops-cc-cnct"
-    resource_group_key = "level2"
+    name               = "prz-plfm-ops-cc-cnct"
+    resource_group_key = "connectivity"
     sku_name           = "standard"
 
     creation_policies = {

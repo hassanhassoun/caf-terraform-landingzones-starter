@@ -11,7 +11,7 @@ rover ignite \
   --playbook /tf/caf/starter/templates/platform/ansible.yaml \
   -e base_templates_folder=/tf/caf/templates/platform \
   -e resource_template_folder=/tf/caf/templates/resources \
-  -e config_folder=/tf/caf/orgs/prz/standalone/platform
+  -e config_folder=/tf/caf/orgs/prs/standalone/platform
   ```
 
 Get started with the [launchpad](./platform/level0/launchpad)

@@ -13,13 +13,13 @@ landingzone = {
 
 resource_groups = {
   rg1 = {
-    name = "rg-ops-devops-cc-001"
+    name = "plfm-ops-cc-devops01"
   }
 }
 
 keyvaults = {
   devops = {
-    name               = "kv-prz-ops-cc-devops01"
+    name               = "plfm-ops-cc-devops01"
     resource_group_key = "rg1"
     sku_name           = "standard"
 
@@ -75,7 +75,7 @@ keyvault_access_policies_azuread_apps = {
 azuread_apps = {
   devops = {
     useprefix               = true
-    application_name        = "sp-caf-devops-connection"
+    application_name        = "plfm-ops-caf-devopsconnection"
     password_expire_in_days = 60
     tenant_name             = "hassanhassounsandpit"
     keyvaults = {

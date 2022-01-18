@@ -1,6 +1,6 @@
 azuread_groups = {
   management = {
-    name                   = "caf-management"
+    name                   = "prz-plfm-ops-caf-management"
     prevent_duplicate_name = true
     members = {
       azuread_service_principal_keys = ["management"]
@@ -8,7 +8,7 @@ azuread_groups = {
   }
 
   connectivity = {
-    name                   = "caf-connectivity"
+    name                   = "prz-plfm-ops-caf-connectivity"
     prevent_duplicate_name = true
     members = {
       azuread_service_principal_keys = ["connectivity"]

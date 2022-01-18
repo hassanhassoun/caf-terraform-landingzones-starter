@@ -184,7 +184,7 @@ azure_devops = {
 
   pipelines = {
     caf_management_plan = {
-      name                = "prz_non_prod_management_plan"
+      name                = "prs_non_prod_management_plan"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -200,7 +200,7 @@ azure_devops = {
       }
     }
     caf_connectivity_plan = {
-      name                = "prz_non_prod_connectivity_plan"
+      name                = "prs_non_prod_connectivity_plan"
       folder              = "\\configuration\\level2"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -218,7 +218,7 @@ azure_devops = {
   }
   apply_pipelines = {
     caf_management_apply = {
-      name                = "prz_non_prod_management_apply"
+      name                = "prs_non_prod_management_apply"
       folder              = "\\configuration\\level1"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"
@@ -235,7 +235,7 @@ azure_devops = {
       }
     }
     caf_connectivity_apply = {
-      name                = "prz_non_prod_connectivity_apply"
+      name                = "prs_non_prod_connectivity_apply"
       folder              = "\\configuration\\level2"
       yaml                = ".pipelines/pipeline.yaml"
       repo_type           = "TfsGit"

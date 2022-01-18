@@ -8,7 +8,7 @@ passthrough = false
 # Do not change the following values once the launchpad deployed.
 
 # Enable tag inheritance (can be changed)
-inherit_tags = false
+inherit_tags = true
 # When passthrough is set to false, define the number of random characters to add to the names
 random_length = 0
 
@@ -35,6 +35,7 @@ launchpad_key_names = {
 
 # Global tags
 tags = {
-  ApplicationOwner = "sre"
-  BusinessUnit     = "sre"
+  Partner = "Accenture"
+  Project = "caf"
+  Sharing = "tenant"
 }

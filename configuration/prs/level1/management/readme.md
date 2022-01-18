@@ -11,7 +11,7 @@ rover login -t hassanhassounsandpit
 
 rover \
   -lz /tf/caf/landingzones/caf_solution \
-  -var-folder /tf/caf/configuration/prz/level1/management \
+  -var-folder /tf/caf/configuration/prs/level1/management \
   -tfstate_subscription_id <subscription_id> \
   -target_subscription <subscription_id> \
   -tfstate management.tfstate \

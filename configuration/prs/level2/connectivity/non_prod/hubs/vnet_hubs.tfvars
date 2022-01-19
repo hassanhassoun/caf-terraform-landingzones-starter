@@ -17,6 +17,12 @@ vnets = {
         cidr = ["10.2.1.0/24"]
       }
     }
-    subnets = {}
+    subnets = {
+      AzureBastionSubnet = {
+        name    = "AzureBastionSubnet" #Must be called AzureBastionSubnet
+        cidr    = ["10.2.2.64/26"]
+        nsg_key = "azure_bastion_nsg"
+      }
+    }
   }
 }

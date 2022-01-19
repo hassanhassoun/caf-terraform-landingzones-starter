@@ -7,11 +7,11 @@ diagnostics_destinations = {
   # in the region of the deployment
   storage = {
     all_regions = {
-      "Canada Central" = {
+      "canadacentral" = {
         storage_account_key = "diagsiem_cc"
       }
-      "Canada East" = {
-        storage_account_key = "diagsiem_cc"
+      "canadaeast" = {
+        storage_account_key = "diagsiem_ce"
       }
     }
   }

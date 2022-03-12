@@ -18,7 +18,7 @@ virtual_machines = {
     networking_interfaces = {
       nic0 = {
         # Value of the keys from networking.tfvars
-        lz_key                  = "seed"
+        lz_key                  = "data"
         vnet_key                = "existing"
         subnet_key              = "test"
         primary                 = true

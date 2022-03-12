@@ -8,5 +8,9 @@ landingzone = {
       level   = "lower"
       tfstate = "caf_launchpad.tfstate"
     }
+    data = {
+      level   = "current"
+      tfstate = "data.tfstate"
+    }
   }
 }
